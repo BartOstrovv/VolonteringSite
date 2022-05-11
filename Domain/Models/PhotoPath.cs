@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DLL.Models
+namespace Domain.Models
 {
-    internal class PersonData
+    public class PhotoPath
     {
+        public int Id { get; set; }
+        public string Url { get; set; }
     }
 }
