@@ -40,18 +40,6 @@ namespace Volunteering.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TransferHistories",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TransferHistories", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -80,15 +68,11 @@ namespace Volunteering.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Body = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    HistoryId = table.Column<int>(type: "int", nullable: false),
                     CurrentMoney = table.Column<double>(type: "float", nullable: false),
                     NeedMoney = table.Column<double>(type: "float", nullable: false),
-                    AuthorId = table.Column<int>(type: "int", nullable: false),
-                    NeedDelivery = table.Column<bool>(type: "bit", nullable: false),
-                    SupplierId = table.Column<int>(type: "int", nullable: false),
+                    AuthorId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     DeliveryAddressId = table.Column<int>(type: "int", nullable: false),
-                    Close = table.Column<bool>(type: "bit", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    Close = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -99,12 +83,6 @@ namespace Volunteering.Migrations
                         principalTable: "Addresses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Advertisements_TransferHistories_HistoryId",
-                        column: x => x.HistoryId,
-                        principalTable: "TransferHistories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -113,7 +91,7 @@ namespace Volunteering.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhotoPath = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AdvertisementId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -132,14 +110,13 @@ namespace Volunteering.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PhotoPathId = table.Column<int>(type: "int", nullable: false),
+                    PhotoId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Surname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
                     Mobile = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AddressId = table.Column<int>(type: "int", nullable: false),
-                    Money = table.Column<double>(type: "float", nullable: false),
-                    AdvertisementId = table.Column<int>(type: "int", nullable: true)
+                    Money = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -151,13 +128,8 @@ namespace Volunteering.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_People_Advertisements_AdvertisementId",
-                        column: x => x.AdvertisementId,
-                        principalTable: "Advertisements",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_People_Photos_PhotoPathId",
-                        column: x => x.PhotoPathId,
+                        name: "FK_People_Photos_PhotoId",
+                        column: x => x.PhotoId,
                         principalTable: "Photos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -194,34 +166,6 @@ namespace Volunteering.Migrations
                         principalTable: "People",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Transfer",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SenderId = table.Column<int>(type: "int", nullable: false),
-                    Sum = table.Column<double>(type: "float", nullable: false),
-                    DateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TransferHistoryId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Transfer", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Transfer_People_SenderId",
-                        column: x => x.SenderId,
-                        principalTable: "People",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Transfer_TransferHistories_TransferHistoryId",
-                        column: x => x.TransferHistoryId,
-                        principalTable: "TransferHistories",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -309,6 +253,58 @@ namespace Volunteering.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Comment",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Text = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AdvertisementId = table.Column<int>(type: "int", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Comment", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Comment_Advertisements_AdvertisementId",
+                        column: x => x.AdvertisementId,
+                        principalTable: "Advertisements",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Comment_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Donations",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SenderId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Sum = table.Column<double>(type: "float", nullable: false),
+                    DateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AdvertisementId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Donations", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Donations_Advertisements_AdvertisementId",
+                        column: x => x.AdvertisementId,
+                        principalTable: "Advertisements",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Donations_AspNetUsers_SenderId",
+                        column: x => x.SenderId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Advertisements_AuthorId",
                 table: "Advertisements",
@@ -318,21 +314,6 @@ namespace Volunteering.Migrations
                 name: "IX_Advertisements_DeliveryAddressId",
                 table: "Advertisements",
                 column: "DeliveryAddressId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Advertisements_HistoryId",
-                table: "Advertisements",
-                column: "HistoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Advertisements_SupplierId",
-                table: "Advertisements",
-                column: "SupplierId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Advertisements_UserId",
-                table: "Advertisements",
-                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -379,57 +360,46 @@ namespace Volunteering.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Comment_AdvertisementId",
+                table: "Comment",
+                column: "AdvertisementId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comment_UserId",
+                table: "Comment",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Donations_AdvertisementId",
+                table: "Donations",
+                column: "AdvertisementId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Donations_SenderId",
+                table: "Donations",
+                column: "SenderId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_People_AddressId",
                 table: "People",
                 column: "AddressId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_People_AdvertisementId",
+                name: "IX_People_PhotoId",
                 table: "People",
-                column: "AdvertisementId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_People_PhotoPathId",
-                table: "People",
-                column: "PhotoPathId");
+                column: "PhotoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Photos_AdvertisementId",
                 table: "Photos",
                 column: "AdvertisementId");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Transfer_SenderId",
-                table: "Transfer",
-                column: "SenderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Transfer_TransferHistoryId",
-                table: "Transfer",
-                column: "TransferHistoryId");
-
             migrationBuilder.AddForeignKey(
-                name: "FK_Advertisements_AspNetUsers_UserId",
-                table: "Advertisements",
-                column: "UserId",
-                principalTable: "AspNetUsers",
-                principalColumn: "Id");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Advertisements_People_AuthorId",
+                name: "FK_Advertisements_AspNetUsers_AuthorId",
                 table: "Advertisements",
                 column: "AuthorId",
-                principalTable: "People",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.NoAction);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Advertisements_People_SupplierId",
-                table: "Advertisements",
-                column: "SupplierId",
-                principalTable: "People",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.NoAction);
+                principalTable: "AspNetUsers",
+                principalColumn: "Id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -443,15 +413,7 @@ namespace Volunteering.Migrations
                 table: "People");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_Advertisements_AspNetUsers_UserId",
-                table: "Advertisements");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Advertisements_People_AuthorId",
-                table: "Advertisements");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Advertisements_People_SupplierId",
+                name: "FK_Advertisements_AspNetUsers_AuthorId",
                 table: "Advertisements");
 
             migrationBuilder.DropTable(
@@ -470,7 +432,10 @@ namespace Volunteering.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Transfer");
+                name: "Comment");
+
+            migrationBuilder.DropTable(
+                name: "Donations");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -489,9 +454,6 @@ namespace Volunteering.Migrations
 
             migrationBuilder.DropTable(
                 name: "Advertisements");
-
-            migrationBuilder.DropTable(
-                name: "TransferHistories");
         }
     }
 }

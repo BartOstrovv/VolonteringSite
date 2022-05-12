@@ -6,17 +6,12 @@ using System.Threading.Tasks;
 
 namespace Domain.Models
 {
-    public class Transfer
+    public class Donation
     {
         public int Id { get; set; }
-        public PersonData Sender { get; set; }
+        public User Sender { get; set; }
         public double Sum { get; set; }
         public DateTime DateTime { get; set; }
         public string Comment { get; set; }
-    }
-    public class TransferHistory
-    {
-        public int Id { get; set; }
-        public List<Transfer> Transfers { get; set; }
     }
 }

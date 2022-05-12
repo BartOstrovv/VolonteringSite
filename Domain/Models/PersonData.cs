@@ -9,7 +9,7 @@ namespace Domain.Models
     public class PersonData
     {
         public int Id { get; set; }
-        public PhotoPath PhotoPath { get; set; }
+        public Photo Photo { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public int Age { get; set; }

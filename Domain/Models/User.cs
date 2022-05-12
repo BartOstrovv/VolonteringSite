@@ -6,5 +6,7 @@ namespace Domain.Models
     {
         public List<Advertisement> Advertisements { get; set; }
         public PersonData PersonData { get; set; }
+        public List<Comment> Comments { get; set; }
+        public List<Donation> Donations { get; set; }
     }
 }

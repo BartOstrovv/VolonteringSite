@@ -58,8 +58,8 @@ namespace Volunteering.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
+                    b.Property<string>("AuthorId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Body")
                         .IsRequired()
@@ -74,19 +74,34 @@ namespace Volunteering.Migrations
                     b.Property<int>("DeliveryAddressId")
                         .HasColumnType("int");
 
-                    b.Property<int>("HistoryId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("NeedDelivery")
-                        .HasColumnType("bit");
-
                     b.Property<double>("NeedMoney")
                         .HasColumnType("float");
 
-                    b.Property<int>("SupplierId")
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.HasIndex("DeliveryAddressId");
+
+                    b.ToTable("Advertisements");
+                });
+
+            modelBuilder.Entity("Domain.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Title")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("AdvertisementId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -95,17 +110,44 @@ namespace Volunteering.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
-
-                    b.HasIndex("DeliveryAddressId");
-
-                    b.HasIndex("HistoryId");
-
-                    b.HasIndex("SupplierId");
+                    b.HasIndex("AdvertisementId");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Advertisements");
+                    b.ToTable("Comment");
+                });
+
+            modelBuilder.Entity("Domain.Models.Donation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("AdvertisementId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SenderId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("Sum")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdvertisementId");
+
+                    b.HasIndex("SenderId");
+
+                    b.ToTable("Donations");
                 });
 
             modelBuilder.Entity("Domain.Models.PersonData", b =>
@@ -117,9 +159,6 @@ namespace Volunteering.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("AddressId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("AdvertisementId")
                         .HasColumnType("int");
 
                     b.Property<int>("Age")
@@ -136,7 +175,7 @@ namespace Volunteering.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhotoPathId")
+                    b.Property<int>("PhotoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Surname")
@@ -147,14 +186,12 @@ namespace Volunteering.Migrations
 
                     b.HasIndex("AddressId");
 
-                    b.HasIndex("AdvertisementId");
-
-                    b.HasIndex("PhotoPathId");
+                    b.HasIndex("PhotoId");
 
                     b.ToTable("People");
                 });
 
-            modelBuilder.Entity("Domain.Models.PhotoPath", b =>
+            modelBuilder.Entity("Domain.Models.Photo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -165,7 +202,7 @@ namespace Volunteering.Migrations
                     b.Property<int?>("AdvertisementId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Url")
+                    b.Property<string>("PhotoPath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -174,52 +211,6 @@ namespace Volunteering.Migrations
                     b.HasIndex("AdvertisementId");
 
                     b.ToTable("Photos");
-                });
-
-            modelBuilder.Entity("Domain.Models.Transfer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Comment")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("SenderId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Sum")
-                        .HasColumnType("float");
-
-                    b.Property<int?>("TransferHistoryId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SenderId");
-
-                    b.HasIndex("TransferHistoryId");
-
-                    b.ToTable("Transfer");
-                });
-
-            modelBuilder.Entity("Domain.Models.TransferHistory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TransferHistories");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -444,11 +435,9 @@ namespace Volunteering.Migrations
 
             modelBuilder.Entity("Domain.Models.Advertisement", b =>
                 {
-                    b.HasOne("Domain.Models.PersonData", "Author")
-                        .WithMany()
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                    b.HasOne("Domain.Models.User", "Author")
+                        .WithMany("Advertisements")
+                        .HasForeignKey("AuthorId");
 
                     b.HasOne("Domain.Models.Address", "DeliveryAddress")
                         .WithMany()
@@ -456,29 +445,33 @@ namespace Volunteering.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Models.TransferHistory", "History")
-                        .WithMany()
-                        .HasForeignKey("HistoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Models.PersonData", "Supplier")
-                        .WithMany()
-                        .HasForeignKey("SupplierId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Models.User", null)
-                        .WithMany("Advertisements")
-                        .HasForeignKey("UserId");
-
                     b.Navigation("Author");
 
                     b.Navigation("DeliveryAddress");
+                });
 
-                    b.Navigation("History");
+            modelBuilder.Entity("Domain.Models.Comment", b =>
+                {
+                    b.HasOne("Domain.Models.Advertisement", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("AdvertisementId");
 
-                    b.Navigation("Supplier");
+                    b.HasOne("Domain.Models.User", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("Domain.Models.Donation", b =>
+                {
+                    b.HasOne("Domain.Models.Advertisement", null)
+                        .WithMany("Donations")
+                        .HasForeignKey("AdvertisementId");
+
+                    b.HasOne("Domain.Models.User", "Sender")
+                        .WithMany("Donations")
+                        .HasForeignKey("SenderId");
+
+                    b.Navigation("Sender");
                 });
 
             modelBuilder.Entity("Domain.Models.PersonData", b =>
@@ -489,41 +482,22 @@ namespace Volunteering.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Models.Advertisement", null)
-                        .WithMany("Volonters")
-                        .HasForeignKey("AdvertisementId");
-
-                    b.HasOne("Domain.Models.PhotoPath", "PhotoPath")
+                    b.HasOne("Domain.Models.Photo", "Photo")
                         .WithMany()
-                        .HasForeignKey("PhotoPathId")
+                        .HasForeignKey("PhotoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Address");
 
-                    b.Navigation("PhotoPath");
+                    b.Navigation("Photo");
                 });
 
-            modelBuilder.Entity("Domain.Models.PhotoPath", b =>
+            modelBuilder.Entity("Domain.Models.Photo", b =>
                 {
                     b.HasOne("Domain.Models.Advertisement", null)
                         .WithMany("Images")
                         .HasForeignKey("AdvertisementId");
-                });
-
-            modelBuilder.Entity("Domain.Models.Transfer", b =>
-                {
-                    b.HasOne("Domain.Models.PersonData", "Sender")
-                        .WithMany()
-                        .HasForeignKey("SenderId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Models.TransferHistory", null)
-                        .WithMany("Transfers")
-                        .HasForeignKey("TransferHistoryId");
-
-                    b.Navigation("Sender");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -582,7 +556,7 @@ namespace Volunteering.Migrations
                     b.HasOne("Domain.Models.PersonData", "PersonData")
                         .WithMany()
                         .HasForeignKey("PersonDataId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("PersonData");
@@ -590,19 +564,20 @@ namespace Volunteering.Migrations
 
             modelBuilder.Entity("Domain.Models.Advertisement", b =>
                 {
+                    b.Navigation("Comments");
+
+                    b.Navigation("Donations");
+
                     b.Navigation("Images");
-
-                    b.Navigation("Volonters");
-                });
-
-            modelBuilder.Entity("Domain.Models.TransferHistory", b =>
-                {
-                    b.Navigation("Transfers");
                 });
 
             modelBuilder.Entity("Domain.Models.User", b =>
                 {
                     b.Navigation("Advertisements");
+
+                    b.Navigation("Comments");
+
+                    b.Navigation("Donations");
                 });
 #pragma warning restore 612, 618
         }

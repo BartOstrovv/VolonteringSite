@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Models
 {
-    public class PhotoPath
+    public class Comment
     {
         public int Id { get; set; }
-        public string Url { get; set; }
+        public string Text { get; set; }
     }
 }

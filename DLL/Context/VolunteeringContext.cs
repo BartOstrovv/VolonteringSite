@@ -20,7 +20,7 @@ namespace DLL.Context
         public DbSet<Advertisement> Advertisements { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<PersonData> People { get; set; }
-        public DbSet<TransferHistory> TransferHistories { get; set; }
-        public DbSet<PhotoPath> Photos { get; set; }
+        public DbSet<Donation> Donations { get; set; }
+        public DbSet<Photo> Photos { get; set; }
     }
 }
