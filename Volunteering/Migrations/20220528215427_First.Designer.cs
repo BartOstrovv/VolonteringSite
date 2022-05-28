@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Volunteering.Migrations
 {
     [DbContext(typeof(VolunteeringContext))]
-    [Migration("20220512161015_FirstLoad")]
-    partial class FirstLoad
+    [Migration("20220528215427_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -69,6 +69,9 @@ namespace Volunteering.Migrations
 
                     b.Property<bool>("Close")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<double>("CurrentMoney")
                         .HasColumnType("float");
@@ -427,7 +430,7 @@ namespace Volunteering.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
-                    b.Property<int>("PersonDataId")
+                    b.Property<int?>("PersonDataId")
                         .HasColumnType("int");
 
                     b.HasIndex("PersonDataId");
@@ -557,9 +560,7 @@ namespace Volunteering.Migrations
                 {
                     b.HasOne("Domain.Models.PersonData", "PersonData")
                         .WithMany()
-                        .HasForeignKey("PersonDataId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PersonDataId");
 
                     b.Navigation("PersonData");
                 });

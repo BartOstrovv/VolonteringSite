@@ -7,8 +7,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using DLL.Repository.Interfaces;
 
-namespace DLL.Repository.Interfaces
+namespace DLL.Repository
 {
     public class DonationRepository : BaseRepository<Donation>
     {

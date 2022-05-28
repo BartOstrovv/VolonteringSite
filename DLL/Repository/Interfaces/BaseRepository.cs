@@ -36,5 +36,10 @@ namespace DLL.Repository.Interfaces
                 return new OperationDetails() { Message = "Failed to create Entity", IsSuccessful = false };
             }
         }
+
+        public void Update(TEnntity enntity)
+        {
+          Enntities.Update(enntity);
+        }
     }
 }

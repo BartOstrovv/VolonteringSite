@@ -10,6 +10,7 @@ namespace Domain.Models
     {
         public int Id { get; set; }
         public List<Photo> Images { get; set; }
+        public DateTime CreatedDate { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
         public double CurrentMoney { get; set; }
