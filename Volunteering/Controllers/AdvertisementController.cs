@@ -27,11 +27,12 @@ namespace Volunteering.Controllers
 
        
         [Authorize]
-        public ActionResult Create(Advertisement ad)
+        public async Task<IActionResult> Create(Advertisement ad)
         {
             if (ad.Title != null)
             {
-                _adService.AddAdvertisementAsync(ad);
+                
+                await _adService.AddAdvertisementAsync(ad);
     
                 return RedirectToAction("Index");
             }
@@ -63,10 +64,11 @@ namespace Volunteering.Controllers
             _userSevice.AddCommentToUser(currentUser.Identity.Name, comment);
             return RedirectToAction("Edit", ad);
         }
-
-        public async Task<ActionResult> FindAdsAsync(string text)
+        public async Task<ActionResult> FindAds(string text)
         {
-            return View(await _adService.FindAds(text));
+            if (!String.IsNullOrEmpty(text))
+                return View("FindResult", (await _adService.FindAds(text)));
+            return View();
         }
     }
 }

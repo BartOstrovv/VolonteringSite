@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Volunteering.Migrations
 {
-    public partial class First : Migration
+    public partial class firstLoad : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -71,9 +71,9 @@ namespace Volunteering.Migrations
                     Body = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CurrentMoney = table.Column<double>(type: "float", nullable: false),
                     NeedMoney = table.Column<double>(type: "float", nullable: false),
-                    AuthorId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    DeliveryAddressId = table.Column<int>(type: "int", nullable: false),
-                    Close = table.Column<bool>(type: "bit", nullable: false)
+                    DeliveryAddressId = table.Column<int>(type: "int", nullable: true),
+                    Close = table.Column<bool>(type: "bit", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -82,8 +82,7 @@ namespace Volunteering.Migrations
                         name: "FK_Advertisements_Addresses_DeliveryAddressId",
                         column: x => x.DeliveryAddressId,
                         principalTable: "Addresses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -306,14 +305,14 @@ namespace Volunteering.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Advertisements_AuthorId",
-                table: "Advertisements",
-                column: "AuthorId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Advertisements_DeliveryAddressId",
                 table: "Advertisements",
                 column: "DeliveryAddressId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Advertisements_UserId",
+                table: "Advertisements",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -395,9 +394,9 @@ namespace Volunteering.Migrations
                 column: "AdvertisementId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Advertisements_AspNetUsers_AuthorId",
+                name: "FK_Advertisements_AspNetUsers_UserId",
                 table: "Advertisements",
-                column: "AuthorId",
+                column: "UserId",
                 principalTable: "AspNetUsers",
                 principalColumn: "Id");
         }
@@ -413,7 +412,7 @@ namespace Volunteering.Migrations
                 table: "People");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_Advertisements_AspNetUsers_AuthorId",
+                name: "FK_Advertisements_AspNetUsers_UserId",
                 table: "Advertisements");
 
             migrationBuilder.DropTable(

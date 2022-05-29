@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Volunteering.Migrations
 {
     [DbContext(typeof(VolunteeringContext))]
-    [Migration("20220528215427_First")]
-    partial class First
+    [Migration("20220529154230_firstLoad")]
+    partial class firstLoad
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -60,9 +60,6 @@ namespace Volunteering.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("AuthorId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("Body")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -76,7 +73,7 @@ namespace Volunteering.Migrations
                     b.Property<double>("CurrentMoney")
                         .HasColumnType("float");
 
-                    b.Property<int>("DeliveryAddressId")
+                    b.Property<int?>("DeliveryAddressId")
                         .HasColumnType("int");
 
                     b.Property<double>("NeedMoney")
@@ -86,11 +83,14 @@ namespace Volunteering.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
-
                     b.HasIndex("DeliveryAddressId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Advertisements");
                 });
@@ -440,17 +440,13 @@ namespace Volunteering.Migrations
 
             modelBuilder.Entity("Domain.Models.Advertisement", b =>
                 {
-                    b.HasOne("Domain.Models.User", "Author")
-                        .WithMany("Advertisements")
-                        .HasForeignKey("AuthorId");
-
                     b.HasOne("Domain.Models.Address", "DeliveryAddress")
                         .WithMany()
-                        .HasForeignKey("DeliveryAddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DeliveryAddressId");
 
-                    b.Navigation("Author");
+                    b.HasOne("Domain.Models.User", null)
+                        .WithMany("Advertisements")
+                        .HasForeignKey("UserId");
 
                     b.Navigation("DeliveryAddress");
                 });

@@ -17,7 +17,7 @@ namespace BLL.Services
 
         public async Task<IReadOnlyCollection<Advertisement>> GetAllClosedAsync() => await _repo.FindByConditionAsync(x => x.Close == true);
 
-        public async void AddAdvertisementAsync(Advertisement advertisement)
+        public async Task AddAdvertisementAsync(Advertisement advertisement)
         {
             await _repo.CreateAsync(advertisement);
         }

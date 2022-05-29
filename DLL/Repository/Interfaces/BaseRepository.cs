@@ -28,6 +28,7 @@ namespace DLL.Repository.Interfaces
             try
             {
                 await Enntities.AddAsync(enntity).ConfigureAwait(false);
+                await _context.SaveChangesAsync();
                 return new OperationDetails() { Message = "Created", IsSuccessful = true };
             }
             catch(Exception ex)

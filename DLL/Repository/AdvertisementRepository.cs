@@ -18,12 +18,12 @@ namespace DLL.Repository
         }
         public async override Task<IReadOnlyCollection<Advertisement>> FindByConditionAsync(Expression<Func<Advertisement, bool>> predicat)
         {
-            return await Enntities.Include(ad => ad.Author).Include(ad=>ad.Comments).Include(ad=>ad.DeliveryAddress).Include(ad=>ad.Donations).Where(predicat).ToListAsync().ConfigureAwait(false);
+            return await Enntities.Include(ad=>ad.Comments).Include(ad=>ad.DeliveryAddress).Include(ad=>ad.Donations).Where(predicat).ToListAsync().ConfigureAwait(false);
         }
 
         public async override Task<IReadOnlyCollection<Advertisement>> GetAllAsync()
         {
-            return await Enntities.Include(ad => ad.Author).Include(ad => ad.Comments).Include(ad => ad.DeliveryAddress).Include(ad => ad.Donations).ToListAsync().ConfigureAwait(false);
+            return await Enntities.Include(ad => ad.Comments).AsSplitQuery().Include(ad => ad.DeliveryAddress).Include(ad => ad.Donations).AsSplitQuery().ToListAsync().ConfigureAwait(false);
         }
     }
 }
