@@ -2,17 +2,21 @@
 using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 
 namespace Volunteering.Controllers
 {
     public class AdvertisementController : Controller
     {
         private readonly AdvertisementService _adService;
-        private readonly UserService _userSevice;
-        public AdvertisementController(AdvertisementService serv, UserService userService)
+        private readonly CommentService _commentSevice;
+        private readonly UserManager<User> _userManager;
+        private static int EditableAdverisementId = -1;
+        public AdvertisementController(AdvertisementService serv, CommentService commentService, UserManager<User> userManager)
         {
             _adService = serv;
-            _userSevice = userService;
+            _commentSevice = commentService;
+            _userManager = userManager; 
         }
 
         public async Task<IActionResult> Index()
@@ -20,7 +24,7 @@ namespace Volunteering.Controllers
             return View((await _adService.GetAllAsync()).OrderBy(x => x.CreatedDate));
         }
 
-        public async Task<IActionResult> Detail(int id)
+        public async Task<IActionResult> Details(int id)
         {
             return View(await _adService.FindAdvertisementAsync(id));
         }
@@ -40,29 +44,39 @@ namespace Volunteering.Controllers
             return View(ad);
         }
 
-        public ActionResult Edit(int id)
+       /* public ActionResult Edit(int id)
         {
             var ad = _adService.FindAdvertisementAsync(id).Result;
             return View(ad);
-        }
-        [Authorize(Roles ="Admin, Owner")]
-        public ActionResult Edit(Advertisement ad)
+        }*/
+        [Authorize/*(Roles ="Admin, Owner")*/]
+        public async Task<IActionResult> Edit(int id)
         {
-            if (ModelState.IsValid)
+            /*if (ModelState.IsValid)
             {
                 _adService.EditAddvertisement(ad, ad.Id);
                 return RedirectToAction("Index");
-            }
-            return View(ad);
+            }*/
+            return View(await _adService.FindAdvertisementAsync(id));
         }
 
         [Authorize]
-        public ActionResult AddComment(Comment comment, int adId)
+        public async Task<IActionResult> AddComment(int adId, string text)
         {
-            var ad = _adService.AddCommentToAd(comment, adId);
-            System.Security.Claims.ClaimsPrincipal currentUser = this.User;
-            _userSevice.AddCommentToUser(currentUser.Identity.Name, comment);
-            return RedirectToAction("Edit", ad);
+            if (!String.IsNullOrEmpty(text))
+            {
+                adId = EditableAdverisementId;
+                EditableAdverisementId = -1;
+                string userId = _userManager.GetUserAsync(HttpContext.User).Result.Id;
+                var op = _commentSevice.NewComment(text, adId, userId).Result;
+                if (op.IsSuccessful)
+                    return RedirectToAction("Details", new {id = adId});
+            }
+            else
+            {
+                EditableAdverisementId = adId;
+            }
+            return View(await _adService.FindAdvertisementAsync(adId));
         }
         public async Task<ActionResult> FindAds(string text)
         {

@@ -109,6 +109,7 @@ namespace Volunteering.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -178,7 +179,7 @@ namespace Volunteering.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhotoId")
+                    b.Property<int?>("PhotoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Surname")
@@ -457,7 +458,9 @@ namespace Volunteering.Migrations
 
                     b.HasOne("Domain.Models.User", null)
                         .WithMany("Comments")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Domain.Models.Donation", b =>
@@ -483,9 +486,7 @@ namespace Volunteering.Migrations
 
                     b.HasOne("Domain.Models.Photo", "Photo")
                         .WithMany()
-                        .HasForeignKey("PhotoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PhotoId");
 
                     b.Navigation("Address");
 

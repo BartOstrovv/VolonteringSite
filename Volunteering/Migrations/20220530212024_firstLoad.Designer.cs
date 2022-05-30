@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Volunteering.Migrations
 {
     [DbContext(typeof(VolunteeringContext))]
-    [Migration("20220529154230_firstLoad")]
+    [Migration("20220530212024_firstLoad")]
     partial class firstLoad
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -111,6 +111,7 @@ namespace Volunteering.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -180,7 +181,7 @@ namespace Volunteering.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhotoId")
+                    b.Property<int?>("PhotoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Surname")
@@ -459,7 +460,9 @@ namespace Volunteering.Migrations
 
                     b.HasOne("Domain.Models.User", null)
                         .WithMany("Comments")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Domain.Models.Donation", b =>
@@ -485,9 +488,7 @@ namespace Volunteering.Migrations
 
                     b.HasOne("Domain.Models.Photo", "Photo")
                         .WithMany()
-                        .HasForeignKey("PhotoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PhotoId");
 
                     b.Navigation("Address");
 

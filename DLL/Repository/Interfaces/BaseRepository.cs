@@ -38,9 +38,10 @@ namespace DLL.Repository.Interfaces
             }
         }
 
-        public void Update(TEnntity enntity)
+        public async Task Update(TEnntity enntity)
         {
           Enntities.Update(enntity);
+            await _context.SaveChangesAsync();
         }
     }
 }
