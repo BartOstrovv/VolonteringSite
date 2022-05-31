@@ -52,7 +52,7 @@ namespace Volunteering.Controllers
         {
             if (!String.IsNullOrEmpty(ad.Title) && !String.IsNullOrEmpty(ad.Body))
             {
-                await _adService.EditAddvertisement(ad);
+                await _adService.UpdateAsync(ad);
                 return RedirectToAction("Details", new { id = ad.Id });
             }
             return View(await _adService.FindAdvertisementAsync(ad.Id));
@@ -88,6 +88,11 @@ namespace Volunteering.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Donations(int id)
+        {
+            return View(await _donatService.GetFromAdAsync(id));
+        }
+
         [HttpPost]
         public async Task<IActionResult> Donat(Donation donat)
         {
@@ -97,7 +102,7 @@ namespace Volunteering.Controllers
             {
                 ad.CurrentMoney += donat.Sum;
                 ad.Close = ad.CurrentMoney >= ad.NeedMoney;
-                await _adService.EditAddvertisement(ad);
+                await _adService.UpdateAsync(ad);
             }
             await _donatService.NewDonat(EditableAdverisementId, _userManager.GetUserAsync(HttpContext.User).Result.Id, donat.Comment, donat.DateTime, donat.Sum);
             EditableAdverisementId = -1;
@@ -106,7 +111,7 @@ namespace Volunteering.Controllers
         public async Task<ActionResult> FindAds(string text)
         {
             if (!String.IsNullOrEmpty(text))
-                return View("FindResult", (await _adService.FindAds(text)));
+                return View("FindResult", (await _adService.FindAsync(text)));
             return View();
         }
     }
