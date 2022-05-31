@@ -1,4 +1,6 @@
 ﻿using DLL.Repository;
+using Domain.Models;
+
 namespace BLL.Services
 {
     public class DonationService
@@ -10,5 +12,9 @@ namespace BLL.Services
             _repo = repo;
         }
 
+        public async Task<DLL.Models.OperationDetails> NewDonat(int? adId, string userId, string coment, DateTime dateTime, double sum)
+        {
+            return await _repo.CreateAsync(new Donation() { AdvertisementId = adId, DateTime = dateTime, Sum = sum, UserId = userId, Comment = coment });
+        }
     }
 }

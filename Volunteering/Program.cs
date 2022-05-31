@@ -1,7 +1,9 @@
 using BLL.Infrastructure;
 using Domain.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
+using Volunteering.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +13,12 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 var identityBuilder = builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true);
 
-BLL.Infrastructure.Configuration.ConfigurationService(builder.Services, connectionString, identityBuilder);//Config Business
-Volunteering.Infrastructure.Configuration.ConfigurationService(builder.Services);
 
+BLL.Infrastructure.Configuration.ConfigurationService(builder.Services, connectionString, identityBuilder);//Config Business
+
+//builder.Services.AddTransient<IEmailSender, SenGridEmailSender>();
+
+Volunteering.Infrastructure.Configuration.ConfigurationService(builder.Services);
 
 builder.Services.AddControllersWithViews();
 

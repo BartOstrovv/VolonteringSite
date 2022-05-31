@@ -24,15 +24,7 @@ namespace BLL.Services
 
         public async Task<Advertisement> FindAdvertisementAsync(int id) => (await _repo.FindByConditionAsync(x => x.Id == id)).First();
 
-        public async Task EditAddvertisement(Advertisement advertisement, int id)
-        {
-            var adv = _repo.FindByConditionAsync(x => x.Id == id).Result.First();
-            if (adv != null)
-            {
-                adv = advertisement;
-                await _repo.Update(adv);
-            }
-        }
+        public async Task EditAddvertisement(Advertisement advertisement) => await _repo.Update(advertisement);
 
         public async Task<IReadOnlyCollection<Advertisement>> FindAds(string text) => (await _repo.FindByConditionAsync(x => x.Body.Contains(text) || x.Title.Contains(text)));
     }

@@ -40,8 +40,8 @@ namespace DLL.Repository.Interfaces
 
         public async Task Update(TEnntity enntity)
         {
-          Enntities.Update(enntity);
-            await _context.SaveChangesAsync();
+            _context.Entry(enntity).State = EntityState.Modified;
+            await _context.SaveChangesAsync().ConfigureAwait(false);
         }
     }
 }

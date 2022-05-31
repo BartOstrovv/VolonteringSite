@@ -139,17 +139,18 @@ namespace Volunteering.Migrations
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("SenderId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<double>("Sum")
                         .HasColumnType("float");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AdvertisementId");
 
-                    b.HasIndex("SenderId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Donations");
                 });
@@ -469,11 +470,11 @@ namespace Volunteering.Migrations
                         .WithMany("Donations")
                         .HasForeignKey("AdvertisementId");
 
-                    b.HasOne("Domain.Models.User", "Sender")
+                    b.HasOne("Domain.Models.User", null)
                         .WithMany("Donations")
-                        .HasForeignKey("SenderId");
-
-                    b.Navigation("Sender");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Domain.Models.PersonData", b =>

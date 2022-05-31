@@ -10,13 +10,15 @@ namespace Volunteering.Controllers
     {
         private readonly AdvertisementService _adService;
         private readonly CommentService _commentSevice;
+        private readonly DonationService _donatService;
         private readonly UserManager<User> _userManager;
         private static int EditableAdverisementId = -1;
-        public AdvertisementController(AdvertisementService serv, CommentService commentService, UserManager<User> userManager)
+        public AdvertisementController(AdvertisementService serv, CommentService commentService, UserManager<User> userManager, DonationService donationService)
         {
             _adService = serv;
             _commentSevice = commentService;
             _userManager = userManager; 
+            _donatService = donationService;
         }
 
         public async Task<IActionResult> Index()
@@ -44,19 +46,20 @@ namespace Volunteering.Controllers
             return View(ad);
         }
 
-       /* public ActionResult Edit(int id)
-        {
-            var ad = _adService.FindAdvertisementAsync(id).Result;
-            return View(ad);
-        }*/
         [Authorize/*(Roles ="Admin, Owner")*/]
+        [HttpPost]
+        public async Task<IActionResult> Edit(Advertisement ad)
+        {
+            if (!String.IsNullOrEmpty(ad.Title) && !String.IsNullOrEmpty(ad.Body))
+            {
+                await _adService.EditAddvertisement(ad);
+                return RedirectToAction("Details", new { id = ad.Id });
+            }
+            return View(await _adService.FindAdvertisementAsync(ad.Id));
+        }
+
         public async Task<IActionResult> Edit(int id)
         {
-            /*if (ModelState.IsValid)
-            {
-                _adService.EditAddvertisement(ad, ad.Id);
-                return RedirectToAction("Index");
-            }*/
             return View(await _adService.FindAdvertisementAsync(id));
         }
 
@@ -76,7 +79,29 @@ namespace Volunteering.Controllers
             {
                 EditableAdverisementId = adId;
             }
-            return View(await _adService.FindAdvertisementAsync(adId));
+            return View();
+        }
+
+        public ActionResult Donat(int id)
+        {
+            EditableAdverisementId = id;
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Donat(Donation donat)
+        {
+            donat.AdvertisementId = EditableAdverisementId;
+            var ad = await _adService.FindAdvertisementAsync(EditableAdverisementId);
+            if (!ad.Close)
+            {
+                ad.CurrentMoney += donat.Sum;
+                ad.Close = ad.CurrentMoney >= ad.NeedMoney;
+                await _adService.EditAddvertisement(ad);
+            }
+            await _donatService.NewDonat(EditableAdverisementId, _userManager.GetUserAsync(HttpContext.User).Result.Id, donat.Comment, donat.DateTime, donat.Sum);
+            EditableAdverisementId = -1;
+            return RedirectToAction("Details", new { id = donat.AdvertisementId });
         }
         public async Task<ActionResult> FindAds(string text)
         {

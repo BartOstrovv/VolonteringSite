@@ -19,12 +19,12 @@ namespace DLL.Repository
 
         public async override Task<IReadOnlyCollection<Donation>> FindByConditionAsync(Expression<Func<Donation, bool>> predicat)
         {
-            return await Enntities.Include(donat => donat.Sender).Where(predicat).ToListAsync().ConfigureAwait(false);
+            return await Enntities.Where(predicat).ToListAsync().ConfigureAwait(false);
         }
 
         public async override Task<IReadOnlyCollection<Donation>> GetAllAsync()
         {
-            return await Enntities.Include(donat => donat.Sender).ToListAsync().ConfigureAwait(false);
+            return await Enntities.ToListAsync().ConfigureAwait(false);
         }
     }
 }

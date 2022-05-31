@@ -283,11 +283,11 @@ namespace Volunteering.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SenderId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    AdvertisementId = table.Column<int>(type: "int", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Sum = table.Column<double>(type: "float", nullable: false),
                     DateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AdvertisementId = table.Column<int>(type: "int", nullable: true)
+                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -298,10 +298,11 @@ namespace Volunteering.Migrations
                         principalTable: "Advertisements",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Donations_AspNetUsers_SenderId",
-                        column: x => x.SenderId,
+                        name: "FK_Donations_AspNetUsers_UserId",
+                        column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -374,9 +375,9 @@ namespace Volunteering.Migrations
                 column: "AdvertisementId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Donations_SenderId",
+                name: "IX_Donations_UserId",
                 table: "Donations",
-                column: "SenderId");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_People_AddressId",

@@ -1,5 +1,4 @@
-﻿@model Domain.Models.Advertisement
-@{
+﻿@{
     ViewData["Title"] = "AddComment";
 }
 
@@ -10,7 +9,6 @@
 <div class="row">
     <div class="col-md-4">
        <form action="AddComment" method="get">
-           @Html.Label("adId");
            @Html.TextBox("text")
            <input type="submit" value="Find" />
        </form>
