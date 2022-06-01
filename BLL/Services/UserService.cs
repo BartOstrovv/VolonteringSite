@@ -1,4 +1,5 @@
 ﻿using DLL.Repository;
+using Domain.Models;
 
 namespace BLL.Services
 {
@@ -10,5 +11,8 @@ namespace BLL.Services
         {
             _repo = repo;
         }
+
+        public async Task UpdateAsync(User advertisement) => await _repo.Update(advertisement);
+        public async Task<IReadOnlyCollection<User>> GetAllAsync() => await _repo.GetAllAsync();
     }
 }

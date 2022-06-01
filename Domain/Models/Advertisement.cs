@@ -20,6 +20,7 @@ namespace Domain.Models
         public List<Donation> Donations { get; set; }
         public Address? DeliveryAddress { get; set; }
         public List<Comment>? Comments { get; set; }
+        public bool Aproved { get; set; } = false;
         public bool Close { get; set; }
     }
 }

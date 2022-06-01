@@ -72,6 +72,7 @@ namespace Volunteering.Migrations
                     CurrentMoney = table.Column<double>(type: "float", nullable: false),
                     NeedMoney = table.Column<double>(type: "float", nullable: false),
                     DeliveryAddressId = table.Column<int>(type: "int", nullable: true),
+                    Aproved = table.Column<bool>(type: "bit", nullable: false),
                     Close = table.Column<bool>(type: "bit", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },

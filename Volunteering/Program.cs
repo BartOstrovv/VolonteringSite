@@ -4,14 +4,21 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Volunteering.Services;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//serilog
+builder.Host.UseSerilog((hostingContext, configuration) =>
+{
+    configuration.WriteTo.File(builder.Environment.WebRootPath + "/Log.txt");
+});
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-var identityBuilder = builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true);
+var identityBuilder = builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true).AddRoles<IdentityRole>();
 
 
 BLL.Infrastructure.Configuration.ConfigurationService(builder.Services, connectionString, identityBuilder);//Config Business
@@ -23,6 +30,8 @@ Volunteering.Infrastructure.Configuration.ConfigurationService(builder.Services)
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

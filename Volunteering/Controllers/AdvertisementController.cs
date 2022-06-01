@@ -111,7 +111,7 @@ namespace Volunteering.Controllers
         public async Task<ActionResult> FindAds(string text)
         {
             if (!String.IsNullOrEmpty(text))
-                return View("FindResult", (await _adService.FindAsync(text)));
+                return View("FindResult", (await _adService.FindByAdContentAsync(text)));
             return View();
         }
     }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Volunteering.Migrations
 {
     [DbContext(typeof(VolunteeringContext))]
-    [Migration("20220531212559_firstLoad")]
+    [Migration("20220601172044_firstLoad")]
     partial class firstLoad
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,6 +59,9 @@ namespace Volunteering.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("Aproved")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Body")
                         .IsRequired()
