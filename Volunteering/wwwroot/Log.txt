@@ -1,0 +1,675 @@
+2022-06-02 20:03:50.704 +03:00 [Information] User profile is available. Using '"C:\Users\Taras\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-06-02 20:03:51.494 +03:00 [Information] Now listening on: "https://localhost:7230"
+2022-06-02 20:03:51.494 +03:00 [Information] Now listening on: "http://localhost:5230"
+2022-06-02 20:03:51.497 +03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-06-02 20:03:51.497 +03:00 [Information] Hosting environment: "Development"
+2022-06-02 20:03:51.497 +03:00 [Information] Content root path: "D:\GitHub\VolonteringSite\Volunteering\"
+2022-06-02 20:03:52.920 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/ - -
+2022-06-02 20:03:53.006 +03:00 [Information] Executing endpoint '"Volunteering.Controllers.HomeController.Index (Volunteering)"'
+2022-06-02 20:03:53.038 +03:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "Volunteering.Controllers.HomeController" ("Volunteering").
+2022-06-02 20:03:53.046 +03:00 [Information] Executing ViewResult, running view "Index".
+2022-06-02 20:03:53.610 +03:00 [Information] Executed ViewResult - view "Index" executed in 565.3237ms.
+2022-06-02 20:03:53.613 +03:00 [Information] Executed action "Volunteering.Controllers.HomeController.Index (Volunteering)" in 574.171ms
+2022-06-02 20:03:53.613 +03:00 [Information] Executed endpoint '"Volunteering.Controllers.HomeController.Index (Volunteering)"'
+2022-06-02 20:03:53.681 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/ - - - 200 - text/html;+charset=utf-8 764.9773ms
+2022-06-02 20:03:53.691 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - -
+2022-06-02 20:03:53.691 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - -
+2022-06-02 20:03:53.691 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Volunteering.styles.css?v=7AzWUS3h9YRF_lO3c5vHaSt3n1z4DKTIeuaC_9NRi44 - -
+2022-06-02 20:03:53.700 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 8.5715ms
+2022-06-02 20:03:53.723 +03:00 [Information] Sending file. Request path: '"/Volunteering.styles.css"'. Physical path: '"D:\GitHub\VolonteringSite\Volunteering\obj\Debug\net6.0\scopedcss\bundle\Volunteering.styles.css"'
+2022-06-02 20:03:53.724 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Volunteering.styles.css?v=7AzWUS3h9YRF_lO3c5vHaSt3n1z4DKTIeuaC_9NRi44 - - - 200 1129 text/css 32.6029ms
+2022-06-02 20:03:53.739 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 48.2072ms
+2022-06-02 20:03:55.771 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Identity/Account/Register - -
+2022-06-02 20:03:55.773 +03:00 [Information] Executing endpoint '"/Account/Register"'
+2022-06-02 20:03:55.792 +03:00 [Information] Route matched with "{page = \"/Account/Register\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/Register"
+2022-06-02 20:03:55.828 +03:00 [Information] Executing handler method "Volunteering.Areas.Identity.Pages.Account.RegisterModel.OnGetAsync" - ModelState is Valid
+2022-06-02 20:03:55.830 +03:00 [Information] Executed handler method "OnGetAsync", returned result "".
+2022-06-02 20:03:55.833 +03:00 [Information] Executing an implicit handler method - ModelState is Valid
+2022-06-02 20:03:55.833 +03:00 [Information] Executed an implicit handler method, returned result "Microsoft.AspNetCore.Mvc.RazorPages.PageResult".
+2022-06-02 20:03:55.909 +03:00 [Information] Executed page "/Account/Register" in 116.654ms
+2022-06-02 20:03:55.909 +03:00 [Information] Executed endpoint '"/Account/Register"'
+2022-06-02 20:03:55.912 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Identity/Account/Register - - - 200 - text/html;+charset=utf-8 141.0500ms
+2022-06-02 20:03:55.924 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Volunteering.styles.css?v=7AzWUS3h9YRF_lO3c5vHaSt3n1z4DKTIeuaC_9NRi44 - -
+2022-06-02 20:03:55.925 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - -
+2022-06-02 20:03:55.925 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Identity/lib/jquery-validation/dist/jquery.validate.js - -
+2022-06-02 20:03:55.925 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - -
+2022-06-02 20:03:55.925 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.8321ms
+2022-06-02 20:03:55.925 +03:00 [Information] The file "/Volunteering.styles.css" was not modified
+2022-06-02 20:03:55.926 +03:00 [Information] The file "/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" was not modified
+2022-06-02 20:03:55.926 +03:00 [Information] The file "/Identity/lib/jquery-validation/dist/jquery.validate.js" was not modified
+2022-06-02 20:03:55.926 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Volunteering.styles.css?v=7AzWUS3h9YRF_lO3c5vHaSt3n1z4DKTIeuaC_9NRi44 - - - 304 - text/css 1.9276ms
+2022-06-02 20:03:55.926 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - - - 304 - application/javascript 1.4864ms
+2022-06-02 20:03:55.926 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Identity/lib/jquery-validation/dist/jquery.validate.js - - - 304 - application/javascript 1.5504ms
+2022-06-02 20:03:55.928 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - -
+2022-06-02 20:03:55.938 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 10.1790ms
+2022-06-02 20:04:16.522 +03:00 [Information] Request starting HTTP/2 POST https://localhost:7230/Identity/Account/Register application/x-www-form-urlencoded 407
+2022-06-02 20:04:16.529 +03:00 [Information] Executing endpoint '"/Account/Register"'
+2022-06-02 20:04:16.529 +03:00 [Information] Route matched with "{page = \"/Account/Register\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/Register"
+2022-06-02 20:04:16.556 +03:00 [Information] Executing handler method "Volunteering.Areas.Identity.Pages.Account.RegisterModel.OnPostAsync" - ModelState is Valid
+2022-06-02 20:04:17.305 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"VolunteeringContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "MigrationsAssembly=Volunteering "
+2022-06-02 20:04:19.246 +03:00 [Error] Failed executing DbCommand ("1,539"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[PersonDataId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[NormalizedUserName] = @__normalizedUserName_0)"
+2022-06-02 20:04:19.384 +03:00 [Error] An exception occurred while iterating over the results of a query for context type '"DLL.Context.VolunteeringContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:a9efb56b-34c8-437e-80d4-bd07d4487baa
+Error Number:208,State:1,Class:16"
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:a9efb56b-34c8-437e-80d4-bd07d4487baa
+Error Number:208,State:1,Class:16
+2022-06-02 20:04:19.497 +03:00 [Information] Executed page "/Account/Register" in 2968.0176ms
+2022-06-02 20:04:19.498 +03:00 [Information] Executed endpoint '"/Account/Register"'
+2022-06-02 20:04:19.501 +03:00 [Error] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateUserName(UserManager`1 manager, TUser user, ICollection`1 errors)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateAsync(UserManager`1 manager, TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.ValidateUserAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user, String password)
+   at Volunteering.Areas.Identity.Pages.Account.RegisterModel.OnPostAsync(String returnUrl) in D:\GitHub\VolonteringSite\Volunteering\Areas\Identity\Pages\Account\Register.cshtml.cs:line 160
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.ExecutorFactory.GenericTaskHandlerMethod.Convert[T](Object taskAsObject)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.ExecutorFactory.GenericTaskHandlerMethod.Execute(Object receiver, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeHandlerMethodAsync()
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeNextPageFilterAsync()
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.Rethrow(PageHandlerExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:a9efb56b-34c8-437e-80d4-bd07d4487baa
+Error Number:208,State:1,Class:16
+2022-06-02 20:04:19.673 +03:00 [Information] Executed DbCommand ("125"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-06-02 20:04:19.841 +03:00 [Information] Executed DbCommand ("162"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0"
+2022-06-02 20:04:19.982 +03:00 [Information] Request finished HTTP/2 POST https://localhost:7230/Identity/Account/Register application/x-www-form-urlencoded 407 - 500 - text/html;+charset=utf-8 3460.1472ms
+2022-06-02 20:04:19.988 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - -
+2022-06-02 20:04:19.988 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - -
+2022-06-02 20:04:19.989 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.3303ms
+2022-06-02 20:04:19.992 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 4.3580ms
+2022-06-02 20:04:21.550 +03:00 [Information] Request starting HTTP/2 POST https://localhost:7230/ApplyDatabaseMigrations application/x-www-form-urlencoded 121
+2022-06-02 20:04:21.586 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"VolunteeringContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "MigrationsAssembly=Volunteering "
+2022-06-02 20:04:21.706 +03:00 [Information] Executed DbCommand ("114"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-06-02 20:04:21.831 +03:00 [Information] Executed DbCommand ("123"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-06-02 20:04:21.948 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-06-02 20:04:22.126 +03:00 [Information] Executed DbCommand ("119"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);"
+2022-06-02 20:04:22.245 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-06-02 20:04:22.360 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-06-02 20:04:22.485 +03:00 [Information] Executed DbCommand ("122"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-06-02 20:04:22.498 +03:00 [Information] Applying migration '"20220601172044_firstLoad"'.
+2022-06-02 20:04:22.789 +03:00 [Information] Executed DbCommand ("122"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Addresses] (
+    [Id] int NOT NULL IDENTITY,
+    [Country] nvarchar(max) NOT NULL,
+    [City] nvarchar(max) NOT NULL,
+    [Street] nvarchar(max) NOT NULL,
+    [Build] int NOT NULL,
+    CONSTRAINT [PK_Addresses] PRIMARY KEY ([Id])
+);"
+2022-06-02 20:04:22.905 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);"
+2022-06-02 20:04:23.022 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);"
+2022-06-02 20:04:23.139 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Advertisements] (
+    [Id] int NOT NULL IDENTITY,
+    [CreatedDate] datetime2 NOT NULL,
+    [Title] nvarchar(max) NOT NULL,
+    [Body] nvarchar(max) NOT NULL,
+    [CurrentMoney] float NOT NULL,
+    [NeedMoney] float NOT NULL,
+    [DeliveryAddressId] int NULL,
+    [Aproved] bit NOT NULL,
+    [Close] bit NOT NULL,
+    [UserId] nvarchar(450) NULL,
+    CONSTRAINT [PK_Advertisements] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Advertisements_Addresses_DeliveryAddressId] FOREIGN KEY ([DeliveryAddressId]) REFERENCES [Addresses] ([Id])
+);"
+2022-06-02 20:04:23.257 +03:00 [Information] Executed DbCommand ("118"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Photos] (
+    [Id] int NOT NULL IDENTITY,
+    [PhotoPath] nvarchar(max) NOT NULL,
+    [AdvertisementId] int NULL,
+    CONSTRAINT [PK_Photos] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Photos_Advertisements_AdvertisementId] FOREIGN KEY ([AdvertisementId]) REFERENCES [Advertisements] ([Id])
+);"
+2022-06-02 20:04:23.373 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [People] (
+    [Id] int NOT NULL IDENTITY,
+    [PhotoId] int NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Surname] nvarchar(max) NOT NULL,
+    [Age] int NOT NULL,
+    [Mobile] nvarchar(max) NOT NULL,
+    [AddressId] int NOT NULL,
+    [Money] float NOT NULL,
+    CONSTRAINT [PK_People] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_People_Addresses_AddressId] FOREIGN KEY ([AddressId]) REFERENCES [Addresses] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_People_Photos_PhotoId] FOREIGN KEY ([PhotoId]) REFERENCES [Photos] ([Id])
+);"
+2022-06-02 20:04:23.491 +03:00 [Information] Executed DbCommand ("117"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [Discriminator] nvarchar(max) NOT NULL,
+    [PersonDataId] int NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUsers_People_PersonDataId] FOREIGN KEY ([PersonDataId]) REFERENCES [People] ([Id])
+);"
+2022-06-02 20:04:23.607 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);"
+2022-06-02 20:04:23.723 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(128) NOT NULL,
+    [ProviderKey] nvarchar(128) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);"
+2022-06-02 20:04:23.839 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);"
+2022-06-02 20:04:23.955 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(128) NOT NULL,
+    [Name] nvarchar(128) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);"
+2022-06-02 20:04:24.072 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Comment] (
+    [Id] int NOT NULL IDENTITY,
+    [Text] nvarchar(max) NOT NULL,
+    [AdvertisementId] int NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_Comment] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Comment_Advertisements_AdvertisementId] FOREIGN KEY ([AdvertisementId]) REFERENCES [Advertisements] ([Id]),
+    CONSTRAINT [FK_Comment_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);"
+2022-06-02 20:04:24.188 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Donations] (
+    [Id] int NOT NULL IDENTITY,
+    [AdvertisementId] int NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    [Sum] float NOT NULL,
+    [DateTime] datetime2 NOT NULL,
+    [Comment] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Donations] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Donations_Advertisements_AdvertisementId] FOREIGN KEY ([AdvertisementId]) REFERENCES [Advertisements] ([Id]),
+    CONSTRAINT [FK_Donations_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);"
+2022-06-02 20:04:24.303 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Advertisements_DeliveryAddressId] ON [Advertisements] ([DeliveryAddressId]);"
+2022-06-02 20:04:24.418 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Advertisements_UserId] ON [Advertisements] ([UserId]);"
+2022-06-02 20:04:24.534 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);"
+2022-06-02 20:04:24.653 +03:00 [Information] Executed DbCommand ("119"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;"
+2022-06-02 20:04:24.767 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);"
+2022-06-02 20:04:24.883 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);"
+2022-06-02 20:04:24.998 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);"
+2022-06-02 20:04:25.113 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);"
+2022-06-02 20:04:25.228 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_AspNetUsers_PersonDataId] ON [AspNetUsers] ([PersonDataId]);"
+2022-06-02 20:04:25.354 +03:00 [Information] Executed DbCommand ("126"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;"
+2022-06-02 20:04:25.473 +03:00 [Information] Executed DbCommand ("119"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Comment_AdvertisementId] ON [Comment] ([AdvertisementId]);"
+2022-06-02 20:04:25.589 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Comment_UserId] ON [Comment] ([UserId]);"
+2022-06-02 20:04:25.704 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Donations_AdvertisementId] ON [Donations] ([AdvertisementId]);"
+2022-06-02 20:04:25.822 +03:00 [Information] Executed DbCommand ("118"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Donations_UserId] ON [Donations] ([UserId]);"
+2022-06-02 20:04:25.936 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_People_AddressId] ON [People] ([AddressId]);"
+2022-06-02 20:04:26.052 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_People_PhotoId] ON [People] ([PhotoId]);"
+2022-06-02 20:04:26.173 +03:00 [Information] Executed DbCommand ("121"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE INDEX [IX_Photos_AdvertisementId] ON [Photos] ([AdvertisementId]);"
+2022-06-02 20:04:26.302 +03:00 [Information] Executed DbCommand ("129"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""ALTER TABLE [Advertisements] ADD CONSTRAINT [FK_Advertisements_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]);"
+2022-06-02 20:04:26.418 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20220601172044_firstLoad', N'6.0.5');"
+2022-06-02 20:04:26.551 +03:00 [Information] Request finished HTTP/2 POST https://localhost:7230/ApplyDatabaseMigrations application/x-www-form-urlencoded 121 - 204 - - 5000.7691ms
+2022-06-02 20:04:29.599 +03:00 [Information] Request starting HTTP/2 POST https://localhost:7230/Identity/Account/Register application/x-www-form-urlencoded 407
+2022-06-02 20:04:29.600 +03:00 [Information] Executing endpoint '"/Account/Register"'
+2022-06-02 20:04:29.600 +03:00 [Information] Route matched with "{page = \"/Account/Register\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/Register"
+2022-06-02 20:04:29.602 +03:00 [Information] Executing handler method "Volunteering.Areas.Identity.Pages.Account.RegisterModel.OnPostAsync" - ModelState is Valid
+2022-06-02 20:04:29.608 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"VolunteeringContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "MigrationsAssembly=Volunteering "
+2022-06-02 20:04:29.727 +03:00 [Information] Executed DbCommand ("116"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[PersonDataId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[NormalizedUserName] = @__normalizedUserName_0)"
+2022-06-02 20:04:30.174 +03:00 [Information] Executed DbCommand ("118"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Addresses] ([Build], [City], [Country], [Street])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Addresses]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2022-06-02 20:04:30.306 +03:00 [Information] Executed DbCommand ("117"ms) [Parameters=["@p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Double), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [People] ([AddressId], [Age], [Mobile], [Money], [Name], [PhotoId], [Surname])
+VALUES (@p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT [Id]
+FROM [People]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2022-06-02 20:04:30.427 +03:00 [Information] Executed DbCommand ("119"ms) [Parameters=["@p11='?' (Size = 450), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 256), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = DateTimeOffset), @p19='?' (Size = 256), @p20='?' (Size = 256), @p21='?' (Size = 4000), @p22='?' (DbType = Int32), @p23='?' (Size = 4000), @p24='?' (DbType = Boolean), @p25='?' (Size = 4000), @p26='?' (DbType = Boolean), @p27='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Discriminator], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PersonDataId], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27);"
+2022-06-02 20:04:30.553 +03:00 [Information] User created a new account with password.
+2022-06-02 20:04:30.559 +03:00 [Information] Executed handler method "OnPostAsync", returned result "Microsoft.AspNetCore.Mvc.RedirectToPageResult".
+2022-06-02 20:04:30.560 +03:00 [Information] Executing RedirectToPageResult, redirecting to "RegisterConfirmation".
+2022-06-02 20:04:30.561 +03:00 [Information] Executed page "/Account/Register" in 960.0842ms
+2022-06-02 20:04:30.561 +03:00 [Information] Executed endpoint '"/Account/Register"'
+2022-06-02 20:04:30.561 +03:00 [Information] Request finished HTTP/2 POST https://localhost:7230/Identity/Account/Register application/x-www-form-urlencoded 407 - 302 0 - 962.4207ms
+2022-06-02 20:04:30.564 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Identity/Account/RegisterConfirmation?email=testUser@gmail.com&returnUrl=%2F - -
+2022-06-02 20:04:30.564 +03:00 [Information] Executing endpoint '"/Account/RegisterConfirmation"'
+2022-06-02 20:04:30.567 +03:00 [Information] Route matched with "{page = \"/Account/RegisterConfirmation\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/RegisterConfirmation"
+2022-06-02 20:04:30.572 +03:00 [Information] Executing handler method "Volunteering.Areas.Identity.Pages.Account.RegisterConfirmationModel.OnGetAsync" - ModelState is Valid
+2022-06-02 20:04:30.574 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"VolunteeringContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "MigrationsAssembly=Volunteering "
+2022-06-02 20:04:30.710 +03:00 [Information] Executed DbCommand ("129"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[PersonDataId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[NormalizedEmail] = @__normalizedEmail_0)"
+2022-06-02 20:04:30.716 +03:00 [Information] Executed handler method "OnGetAsync", returned result "Microsoft.AspNetCore.Mvc.RazorPages.PageResult".
+2022-06-02 20:04:30.729 +03:00 [Information] Executed page "/Account/RegisterConfirmation" in 161.7273ms
+2022-06-02 20:04:30.729 +03:00 [Information] Executed endpoint '"/Account/RegisterConfirmation"'
+2022-06-02 20:04:30.731 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Identity/Account/RegisterConfirmation?email=testUser@gmail.com&returnUrl=%2F - - - 200 - text/html;+charset=utf-8 166.9936ms
+2022-06-02 20:04:30.745 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Volunteering.styles.css?v=7AzWUS3h9YRF_lO3c5vHaSt3n1z4DKTIeuaC_9NRi44 - -
+2022-06-02 20:04:30.745 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - -
+2022-06-02 20:04:30.746 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.5075ms
+2022-06-02 20:04:30.746 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - -
+2022-06-02 20:04:30.746 +03:00 [Information] The file "/Volunteering.styles.css" was not modified
+2022-06-02 20:04:30.747 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Volunteering.styles.css?v=7AzWUS3h9YRF_lO3c5vHaSt3n1z4DKTIeuaC_9NRi44 - - - 304 - text/css 1.6908ms
+2022-06-02 20:04:30.751 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 4.9111ms
+2022-06-02 20:04:32.553 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Identity/Account/ConfirmEmail?userId=bc531532-eb6a-4ca8-b55d-7383930fc1ef&code=Q2ZESjhENUV5ZUQwYWpSTWtjQ2NORXVQUVF4Wjg2TDZIWE9BN2ZvMEwvbEtmTnYxQW5sSkUycWNHblNOc3kyZjVjNTI4bW9RaWZJSjRnV1duQnpya296YmVPaERKSGRlWHRqTFlMMVAzcmEwWmNycWloVDBaQkpUd2FMY3VJUEw0OXJrZ1RtZllPTU15RlB0blVDU2NybmxIL0l1bjR4ZXdiNVhBYzhzbTBzbEFaeCtVdG00ZENzOTRyaDBjRTZ1c2hSaFFEdmErMHVQcVN2Q3FIZU90UktWd1k5K1dxZktMODRWR0tyV21zOWVoWkVoaTIyR1lrUkJMK1pEc3UycnNKVEtXZz09&returnUrl=%2F - -
+2022-06-02 20:04:32.554 +03:00 [Information] Executing endpoint '"/Account/ConfirmEmail"'
+2022-06-02 20:04:32.557 +03:00 [Information] Route matched with "{page = \"/Account/ConfirmEmail\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/ConfirmEmail"
+2022-06-02 20:04:32.559 +03:00 [Information] Executing handler method "Microsoft.AspNetCore.Identity.UI.V5.Pages.Account.Internal.ConfirmEmailModel.OnGetAsync" - ModelState is Valid
+2022-06-02 20:04:32.561 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"VolunteeringContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "MigrationsAssembly=Volunteering "
+2022-06-02 20:04:32.695 +03:00 [Information] Executed DbCommand ("121"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[PersonDataId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[Id] = @__p_0)"
+2022-06-02 20:04:32.828 +03:00 [Information] Executed DbCommand ("127"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[PersonDataId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[NormalizedUserName] = @__normalizedUserName_0)"
+2022-06-02 20:04:33.084 +03:00 [Information] Executed DbCommand ("122"ms) [Parameters=["@p15='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p16='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PersonDataId] = @p9, [PhoneNumber] = @p10, [PhoneNumberConfirmed] = @p11, [SecurityStamp] = @p12, [TwoFactorEnabled] = @p13, [UserName] = @p14
+WHERE [Id] = @p15 AND [ConcurrencyStamp] = @p16;
+SELECT @@ROWCOUNT;"
+2022-06-02 20:04:33.204 +03:00 [Information] Executed handler method "OnGetAsync", returned result "Microsoft.AspNetCore.Mvc.RazorPages.PageResult".
+2022-06-02 20:04:33.221 +03:00 [Information] Executed page "/Account/ConfirmEmail" in 663.6293ms
+2022-06-02 20:04:33.221 +03:00 [Information] Executed endpoint '"/Account/ConfirmEmail"'
+2022-06-02 20:04:33.222 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Identity/Account/ConfirmEmail?userId=bc531532-eb6a-4ca8-b55d-7383930fc1ef&code=Q2ZESjhENUV5ZUQwYWpSTWtjQ2NORXVQUVF4Wjg2TDZIWE9BN2ZvMEwvbEtmTnYxQW5sSkUycWNHblNOc3kyZjVjNTI4bW9RaWZJSjRnV1duQnpya296YmVPaERKSGRlWHRqTFlMMVAzcmEwWmNycWloVDBaQkpUd2FMY3VJUEw0OXJrZ1RtZllPTU15RlB0blVDU2NybmxIL0l1bjR4ZXdiNVhBYzhzbTBzbEFaeCtVdG00ZENzOTRyaDBjRTZ1c2hSaFFEdmErMHVQcVN2Q3FIZU90UktWd1k5K1dxZktMODRWR0tyV21zOWVoWkVoaTIyR1lrUkJMK1pEc3UycnNKVEtXZz09&returnUrl=%2F - - - 200 - text/html;+charset=utf-8 669.4367ms
+2022-06-02 20:04:33.237 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - -
+2022-06-02 20:04:33.241 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - -
+2022-06-02 20:04:33.241 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.4338ms
+2022-06-02 20:04:33.243 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 5.4579ms
+2022-06-02 20:06:07.856 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"VolunteeringContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "MigrationsAssembly=Volunteering "
+2022-06-02 20:06:16.446 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"VolunteeringContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "MigrationsAssembly=Volunteering "
+2022-06-02 20:06:17.765 +03:00 [Information] Executed DbCommand ("129"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-06-02 20:06:17.899 +03:00 [Information] Executed DbCommand ("125"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-06-02 20:06:18.025 +03:00 [Information] Executed DbCommand ("125"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-06-02 20:06:18.137 +03:00 [Information] Executed DbCommand ("111"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-06-02 20:06:18.257 +03:00 [Information] Executed DbCommand ("112"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-06-02 20:06:18.269 +03:00 [Information] Applying migration '"20220602170607_firstLod"'.
+2022-06-02 20:06:18.572 +03:00 [Error] Failed executing DbCommand ("119"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Addresses] (
+    [Id] int NOT NULL IDENTITY,
+    [Country] nvarchar(max) NOT NULL,
+    [City] nvarchar(max) NOT NULL,
+    [Street] nvarchar(max) NOT NULL,
+    [Build] int NOT NULL,
+    CONSTRAINT [PK_Addresses] PRIMARY KEY ([Id])
+);"
+2022-06-02 20:12:08.856 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"VolunteeringContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "MigrationsAssembly=Volunteering "
+2022-06-02 20:12:27.598 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"VolunteeringContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "MigrationsAssembly=Volunteering "
+2022-06-02 20:12:28.546 +03:00 [Information] Executed DbCommand ("129"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-06-02 20:12:28.675 +03:00 [Information] Executed DbCommand ("121"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-06-02 20:12:28.789 +03:00 [Information] Executed DbCommand ("113"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2022-06-02 20:12:28.906 +03:00 [Information] Executed DbCommand ("117"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2022-06-02 20:12:29.027 +03:00 [Information] Executed DbCommand ("112"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2022-06-02 20:12:29.045 +03:00 [Information] Applying migration '"20220602171208_add-migration firtLoad"'.
+2022-06-02 20:12:29.345 +03:00 [Error] Failed executing DbCommand ("119"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [Addresses] (
+    [Id] int NOT NULL IDENTITY,
+    [Country] nvarchar(max) NOT NULL,
+    [City] nvarchar(max) NOT NULL,
+    [Street] nvarchar(max) NOT NULL,
+    [Build] int NOT NULL,
+    CONSTRAINT [PK_Addresses] PRIMARY KEY ([Id])
+);"
+2022-06-02 20:12:37.737 +03:00 [Information] User profile is available. Using '"C:\Users\Taras\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-06-02 20:12:38.094 +03:00 [Information] Now listening on: "https://localhost:7230"
+2022-06-02 20:12:38.094 +03:00 [Information] Now listening on: "http://localhost:5230"
+2022-06-02 20:12:38.096 +03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-06-02 20:12:38.097 +03:00 [Information] Hosting environment: "Development"
+2022-06-02 20:12:38.097 +03:00 [Information] Content root path: "D:\GitHub\VolonteringSite\Volunteering\"
+2022-06-02 20:12:41.559 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/ - -
+2022-06-02 20:12:41.653 +03:00 [Information] Executing endpoint '"Volunteering.Controllers.HomeController.Index (Volunteering)"'
+2022-06-02 20:12:41.682 +03:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "Volunteering.Controllers.HomeController" ("Volunteering").
+2022-06-02 20:12:41.691 +03:00 [Information] Executing ViewResult, running view "Index".
+2022-06-02 20:12:42.019 +03:00 [Information] Executed ViewResult - view "Index" executed in 329.3458ms.
+2022-06-02 20:12:42.022 +03:00 [Information] Executed action "Volunteering.Controllers.HomeController.Index (Volunteering)" in 338.8009ms
+2022-06-02 20:12:42.022 +03:00 [Information] Executed endpoint '"Volunteering.Controllers.HomeController.Index (Volunteering)"'
+2022-06-02 20:12:42.057 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/ - - - 200 - text/html;+charset=utf-8 501.7947ms
+2022-06-02 20:12:42.071 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - -
+2022-06-02 20:12:42.071 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - -
+2022-06-02 20:12:42.071 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Volunteering.styles.css?v=7AzWUS3h9YRF_lO3c5vHaSt3n1z4DKTIeuaC_9NRi44 - -
+2022-06-02 20:12:42.079 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 8.0403ms
+2022-06-02 20:12:42.095 +03:00 [Information] Sending file. Request path: '"/Volunteering.styles.css"'. Physical path: '"D:\GitHub\VolonteringSite\Volunteering\obj\Debug\net6.0\scopedcss\bundle\Volunteering.styles.css"'
+2022-06-02 20:12:42.096 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Volunteering.styles.css?v=7AzWUS3h9YRF_lO3c5vHaSt3n1z4DKTIeuaC_9NRi44 - - - 200 1129 text/css 24.3164ms
+2022-06-02 20:12:42.109 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.5003ms
+2022-06-02 20:12:44.043 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Identity/Account/Login - -
+2022-06-02 20:12:44.047 +03:00 [Information] Executing endpoint '"/Account/Login"'
+2022-06-02 20:12:44.082 +03:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/Login"
+2022-06-02 20:12:44.117 +03:00 [Information] Executing handler method "Microsoft.AspNetCore.Identity.UI.V5.Pages.Account.Internal.LoginModel.OnGetAsync" - ModelState is Valid
+2022-06-02 20:12:44.125 +03:00 [Information] AuthenticationScheme: "Identity.External" signed out.
+2022-06-02 20:12:44.126 +03:00 [Information] Executed handler method "OnGetAsync", returned result "".
+2022-06-02 20:12:44.131 +03:00 [Information] Executing an implicit handler method - ModelState is Valid
+2022-06-02 20:12:44.131 +03:00 [Information] Executed an implicit handler method, returned result "Microsoft.AspNetCore.Mvc.RazorPages.PageResult".
+2022-06-02 20:12:44.220 +03:00 [Information] Executed page "/Account/Login" in 137.5702ms
+2022-06-02 20:12:44.220 +03:00 [Information] Executed endpoint '"/Account/Login"'
+2022-06-02 20:12:44.225 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Identity/Account/Login - - - 200 - text/html;+charset=utf-8 182.2851ms
+2022-06-02 20:12:44.247 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - -
+2022-06-02 20:12:44.247 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - -
+2022-06-02 20:12:44.248 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.8581ms
+2022-06-02 20:12:44.258 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 10.2298ms
+2022-06-02 20:12:45.623 +03:00 [Information] Request starting HTTP/2 POST https://localhost:7230/Identity/Account/Login application/x-www-form-urlencoded 261
+2022-06-02 20:12:45.629 +03:00 [Information] Executing endpoint '"/Account/Login"'
+2022-06-02 20:12:45.629 +03:00 [Information] Route matched with "{page = \"/Account/Login\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/Login"
+2022-06-02 20:12:45.654 +03:00 [Information] Executing handler method "Microsoft.AspNetCore.Identity.UI.V5.Pages.Account.Internal.LoginModel.OnPostAsync" - ModelState is Valid
+2022-06-02 20:12:46.365 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"VolunteeringContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "MigrationsAssembly=Volunteering "
+2022-06-02 20:12:47.761 +03:00 [Information] Executed DbCommand ("160"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[PersonDataId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[NormalizedUserName] = @__normalizedUserName_0)"
+2022-06-02 20:12:47.781 +03:00 [Information] Executed handler method "OnPostAsync", returned result "Microsoft.AspNetCore.Mvc.RazorPages.PageResult".
+2022-06-02 20:12:47.792 +03:00 [Information] Executed page "/Account/Login" in 2163.0314ms
+2022-06-02 20:12:47.792 +03:00 [Information] Executed endpoint '"/Account/Login"'
+2022-06-02 20:12:47.796 +03:00 [Information] Request finished HTTP/2 POST https://localhost:7230/Identity/Account/Login application/x-www-form-urlencoded 261 - 200 - text/html;+charset=utf-8 2173.7075ms
+2022-06-02 20:12:47.804 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - -
+2022-06-02 20:12:47.804 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - -
+2022-06-02 20:12:47.804 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.3683ms
+2022-06-02 20:12:47.809 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 4.4614ms
+2022-06-02 20:16:47.949 +03:00 [Information] User profile is available. Using '"C:\Users\Taras\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-06-02 20:16:48.211 +03:00 [Information] Now listening on: "https://localhost:7230"
+2022-06-02 20:16:48.211 +03:00 [Information] Now listening on: "http://localhost:5230"
+2022-06-02 20:16:48.218 +03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-06-02 20:16:48.219 +03:00 [Information] Hosting environment: "Development"
+2022-06-02 20:16:48.219 +03:00 [Information] Content root path: "D:\GitHub\VolonteringSite\Volunteering\"
+2022-06-02 20:16:50.382 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/ - -
+2022-06-02 20:16:50.452 +03:00 [Information] Executing endpoint '"Volunteering.Controllers.HomeController.Index (Volunteering)"'
+2022-06-02 20:16:50.475 +03:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Index()" on controller "Volunteering.Controllers.HomeController" ("Volunteering").
+2022-06-02 20:16:50.484 +03:00 [Information] Executing ViewResult, running view "Index".
+2022-06-02 20:16:50.794 +03:00 [Information] Executed ViewResult - view "Index" executed in 312.265ms.
+2022-06-02 20:16:50.798 +03:00 [Information] Executed action "Volunteering.Controllers.HomeController.Index (Volunteering)" in 321.6485ms
+2022-06-02 20:16:50.798 +03:00 [Information] Executed endpoint '"Volunteering.Controllers.HomeController.Index (Volunteering)"'
+2022-06-02 20:16:50.824 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/ - - - 200 - text/html;+charset=utf-8 447.9430ms
+2022-06-02 20:16:50.841 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - -
+2022-06-02 20:16:50.841 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Volunteering.styles.css?v=7AzWUS3h9YRF_lO3c5vHaSt3n1z4DKTIeuaC_9NRi44 - -
+2022-06-02 20:16:50.841 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - -
+2022-06-02 20:16:50.846 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 4.7334ms
+2022-06-02 20:16:50.861 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.2127ms
+2022-06-02 20:16:50.863 +03:00 [Information] The file "/Volunteering.styles.css" was not modified
+2022-06-02 20:16:50.864 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Volunteering.styles.css?v=7AzWUS3h9YRF_lO3c5vHaSt3n1z4DKTIeuaC_9NRi44 - - - 304 - text/css 23.2565ms
+2022-06-02 20:19:54.837 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Identity/Account/Register - -
+2022-06-02 20:19:54.905 +03:00 [Information] Executing endpoint '"/Account/Register"'
+2022-06-02 20:19:54.932 +03:00 [Information] Route matched with "{page = \"/Account/Register\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/Register"
+2022-06-02 20:19:54.955 +03:00 [Information] Executing handler method "Volunteering.Areas.Identity.Pages.Account.RegisterModel.OnGetAsync" - ModelState is Valid
+2022-06-02 20:19:54.956 +03:00 [Information] Executed handler method "OnGetAsync", returned result "".
+2022-06-02 20:19:54.959 +03:00 [Information] Executing an implicit handler method - ModelState is Valid
+2022-06-02 20:19:54.959 +03:00 [Information] Executed an implicit handler method, returned result "Microsoft.AspNetCore.Mvc.RazorPages.PageResult".
+2022-06-02 20:19:55.029 +03:00 [Information] Executed page "/Account/Register" in 96.8809ms
+2022-06-02 20:19:55.029 +03:00 [Information] Executed endpoint '"/Account/Register"'
+2022-06-02 20:19:55.032 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Identity/Account/Register - - - 200 - text/html;+charset=utf-8 194.5708ms
+2022-06-02 20:19:55.044 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Volunteering.styles.css?v=7AzWUS3h9YRF_lO3c5vHaSt3n1z4DKTIeuaC_9NRi44 - -
+2022-06-02 20:19:55.045 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - -
+2022-06-02 20:19:55.048 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.4255ms
+2022-06-02 20:19:55.048 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - -
+2022-06-02 20:19:55.049 +03:00 [Information] The file "/Volunteering.styles.css" was not modified
+2022-06-02 20:19:55.049 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Volunteering.styles.css?v=7AzWUS3h9YRF_lO3c5vHaSt3n1z4DKTIeuaC_9NRi44 - - - 304 - text/css 4.7257ms
+2022-06-02 20:19:55.054 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 5.3231ms
+2022-06-02 20:20:16.838 +03:00 [Information] Request starting HTTP/2 POST https://localhost:7230/Identity/Account/Register application/x-www-form-urlencoded 406
+2022-06-02 20:20:16.850 +03:00 [Information] Executing endpoint '"/Account/Register"'
+2022-06-02 20:20:16.850 +03:00 [Information] Route matched with "{page = \"/Account/Register\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/Register"
+2022-06-02 20:20:16.878 +03:00 [Information] Executing handler method "Volunteering.Areas.Identity.Pages.Account.RegisterModel.OnPostAsync" - ModelState is Valid
+2022-06-02 20:20:20.782 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"VolunteeringContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "MigrationsAssembly=Volunteering "
+2022-06-02 20:20:22.128 +03:00 [Information] Executed DbCommand ("153"ms) [Parameters=["@__normalizedName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0"
+2022-06-02 20:20:22.500 +03:00 [Information] Executed DbCommand ("114"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);"
+2022-06-02 20:20:25.516 +03:00 [Information] Executed DbCommand ("122"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0"
+2022-06-02 20:20:25.652 +03:00 [Information] Executed DbCommand ("115"ms) [Parameters=["@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)"
+2022-06-02 20:20:25.771 +03:00 [Information] Executed DbCommand ("114"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0"
+2022-06-02 20:20:25.785 +03:00 [Warning] User validation failed: "InvalidUserName".
+2022-06-02 20:20:28.557 +03:00 [Information] Executed DbCommand ("121"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[PersonDataId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[NormalizedUserName] = @__normalizedUserName_0)"
+2022-06-02 20:20:28.898 +03:00 [Information] Executed DbCommand ("112"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Addresses] ([Build], [City], [Country], [Street])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Addresses]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2022-06-02 20:20:29.036 +03:00 [Information] Executed DbCommand ("122"ms) [Parameters=["@p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Double), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [People] ([AddressId], [Age], [Mobile], [Money], [Name], [PhotoId], [Surname])
+VALUES (@p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT [Id]
+FROM [People]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2022-06-02 20:20:29.151 +03:00 [Information] Executed DbCommand ("112"ms) [Parameters=["@p11='?' (Size = 450), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 256), @p16='?' (DbType = Boolean), @p17='?' (DbType = Boolean), @p18='?' (DbType = DateTimeOffset), @p19='?' (Size = 256), @p20='?' (Size = 256), @p21='?' (Size = 4000), @p22='?' (DbType = Int32), @p23='?' (Size = 4000), @p24='?' (DbType = Boolean), @p25='?' (Size = 4000), @p26='?' (DbType = Boolean), @p27='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Discriminator], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PersonDataId], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27);"
+2022-06-02 20:20:29.268 +03:00 [Information] Executed DbCommand ("117"ms) [Parameters=["@p28='?' (Size = 450), @p29='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p28, @p29);"
+2022-06-02 20:20:29.387 +03:00 [Information] User created a new account with password.
+2022-06-02 20:20:29.393 +03:00 [Information] Executed handler method "OnPostAsync", returned result "Microsoft.AspNetCore.Mvc.RedirectToPageResult".
+2022-06-02 20:20:29.395 +03:00 [Information] Executing RedirectToPageResult, redirecting to "RegisterConfirmation".
+2022-06-02 20:20:29.395 +03:00 [Information] Executed page "/Account/Register" in 12544.9442ms
+2022-06-02 20:20:29.395 +03:00 [Information] Executed endpoint '"/Account/Register"'
+2022-06-02 20:20:29.398 +03:00 [Information] Request finished HTTP/2 POST https://localhost:7230/Identity/Account/Register application/x-www-form-urlencoded 406 - 302 0 - 12559.6470ms
+2022-06-02 20:20:29.403 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Identity/Account/RegisterConfirmation?email=admin@gmail.com&returnUrl=%2F - -
+2022-06-02 20:20:29.405 +03:00 [Information] Executing endpoint '"/Account/RegisterConfirmation"'
+2022-06-02 20:20:29.408 +03:00 [Information] Route matched with "{page = \"/Account/RegisterConfirmation\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/RegisterConfirmation"
+2022-06-02 20:20:29.416 +03:00 [Information] Executing handler method "Volunteering.Areas.Identity.Pages.Account.RegisterConfirmationModel.OnGetAsync" - ModelState is Valid
+2022-06-02 20:20:29.455 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"VolunteeringContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "MigrationsAssembly=Volunteering "
+2022-06-02 20:20:29.572 +03:00 [Information] Executed DbCommand ("112"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[PersonDataId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[NormalizedEmail] = @__normalizedEmail_0)"
+2022-06-02 20:20:29.578 +03:00 [Information] Executed handler method "OnGetAsync", returned result "Microsoft.AspNetCore.Mvc.RazorPages.PageResult".
+2022-06-02 20:20:29.587 +03:00 [Information] Executed page "/Account/RegisterConfirmation" in 178.8673ms
+2022-06-02 20:20:29.587 +03:00 [Information] Executed endpoint '"/Account/RegisterConfirmation"'
+2022-06-02 20:20:29.588 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Identity/Account/RegisterConfirmation?email=admin@gmail.com&returnUrl=%2F - - - 200 - text/html;+charset=utf-8 184.6266ms
+2022-06-02 20:20:29.601 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - -
+2022-06-02 20:20:29.602 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.3718ms
+2022-06-02 20:20:29.603 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - -
+2022-06-02 20:20:29.613 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 9.9008ms
+2022-06-02 20:20:31.053 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/Identity/Account/ConfirmEmail?userId=a3cf85a3-07f9-4ba1-9fa7-17d3438965d0&code=Q2ZESjhENUV5ZUQwYWpSTWtjQ2NORXVQUVF5Z2tjcTFmWWZzUkNBcVVJbTNBVVJlWkthTlUzemYwa2N2NnJOaC9UblFhV0RJRlNUSENJOTM2VXBEOFEwRWJ5YmYrUlFoMXNId1dZc0dibDc2bG9tRXlRakgrLzJVZCtpaldWYlFUNCsrNlZKYklSaGpwaGs0WWpCRUF3L3g1emZGdjNGdWF2T09veVhrTDRzUWtOTFhDWGVvNmUyNFdVRDZKUzBDTFo0K0FHRFZZTVIzOGp5L290VTdjWUw4bENsbExKYXcrT1ZaNVU3MjYxTTRFZFpXZWRleU1Gc21Zak5mRUJUeUlSVUluUT09&returnUrl=%2F - -
+2022-06-02 20:20:31.054 +03:00 [Information] Executing endpoint '"/Account/ConfirmEmail"'
+2022-06-02 20:20:31.057 +03:00 [Information] Route matched with "{page = \"/Account/ConfirmEmail\", area = \"Identity\", action = \"\", controller = \"\"}". Executing page "/Account/ConfirmEmail"
+2022-06-02 20:20:31.058 +03:00 [Information] Executing handler method "Microsoft.AspNetCore.Identity.UI.V5.Pages.Account.Internal.ConfirmEmailModel.OnGetAsync" - ModelState is Valid
+2022-06-02 20:20:31.067 +03:00 [Information] Entity Framework Core "6.0.5" initialized '"VolunteeringContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.5"' with options: "MigrationsAssembly=Volunteering "
+2022-06-02 20:20:31.187 +03:00 [Information] Executed DbCommand ("114"ms) [Parameters=["@__p_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[PersonDataId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[Id] = @__p_0)"
+2022-06-02 20:20:31.325 +03:00 [Information] Executed DbCommand ("134"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[PersonDataId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[NormalizedUserName] = @__normalizedUserName_0)"
+2022-06-02 20:20:31.558 +03:00 [Information] Executed DbCommand ("112"ms) [Parameters=["@p15='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p16='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 256), @p7='?' (Size = 256), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [LockoutEnabled] = @p4, [LockoutEnd] = @p5, [NormalizedEmail] = @p6, [NormalizedUserName] = @p7, [PasswordHash] = @p8, [PersonDataId] = @p9, [PhoneNumber] = @p10, [PhoneNumberConfirmed] = @p11, [SecurityStamp] = @p12, [TwoFactorEnabled] = @p13, [UserName] = @p14
+WHERE [Id] = @p15 AND [ConcurrencyStamp] = @p16;
+SELECT @@ROWCOUNT;"
+2022-06-02 20:20:31.675 +03:00 [Information] Executed handler method "OnGetAsync", returned result "Microsoft.AspNetCore.Mvc.RazorPages.PageResult".
+2022-06-02 20:20:31.695 +03:00 [Information] Executed page "/Account/ConfirmEmail" in 638.3459ms
+2022-06-02 20:20:31.695 +03:00 [Information] Executed endpoint '"/Account/ConfirmEmail"'
+2022-06-02 20:20:31.701 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/Identity/Account/ConfirmEmail?userId=a3cf85a3-07f9-4ba1-9fa7-17d3438965d0&code=Q2ZESjhENUV5ZUQwYWpSTWtjQ2NORXVQUVF5Z2tjcTFmWWZzUkNBcVVJbTNBVVJlWkthTlUzemYwa2N2NnJOaC9UblFhV0RJRlNUSENJOTM2VXBEOFEwRWJ5YmYrUlFoMXNId1dZc0dibDc2bG9tRXlRakgrLzJVZCtpaldWYlFUNCsrNlZKYklSaGpwaGs0WWpCRUF3L3g1emZGdjNGdWF2T09veVhrTDRzUWtOTFhDWGVvNmUyNFdVRDZKUzBDTFo0K0FHRFZZTVIzOGp5L290VTdjWUw4bENsbExKYXcrT1ZaNVU3MjYxTTRFZFpXZWRleU1Gc21Zak5mRUJUeUlSVUluUT09&returnUrl=%2F - - - 200 - text/html;+charset=utf-8 647.5305ms
+2022-06-02 20:20:31.716 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - -
+2022-06-02 20:20:31.716 +03:00 [Information] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - -
+2022-06-02 20:20:31.716 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 0.6914ms
+2022-06-02 20:20:31.725 +03:00 [Information] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 8.8121ms

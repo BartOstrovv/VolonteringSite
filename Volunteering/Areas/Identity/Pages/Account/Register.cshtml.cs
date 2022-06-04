@@ -30,13 +30,15 @@ namespace Volunteering.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<User> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
             UserManager<User> userManager,
             IUserStore<User> userStore,
             SignInManager<User> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender
+            IEmailSender emailSender,
+            RoleManager<IdentityRole> roleManager
            )
         {
             _userManager = userManager;
@@ -45,6 +47,7 @@ namespace Volunteering.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _roleManager = roleManager;
         }
 
         /// <summary>
@@ -141,6 +144,8 @@ namespace Volunteering.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
+                //await _roleManager.CreateAsync(new IdentityRole("Admin"));
+                //await _userManager.AddToRoleAsync(user, "Admin");
                 user.PersonData = new PersonData()
                 {
                     Name = Input.Name,

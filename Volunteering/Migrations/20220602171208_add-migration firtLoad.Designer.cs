@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Volunteering.Migrations
 {
     [DbContext(typeof(VolunteeringContext))]
-    [Migration("20220601172044_firstLoad")]
-    partial class firstLoad
+    [Migration("20220602171208_add-migration firtLoad")]
+    partial class addmigrationfirtLoad
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

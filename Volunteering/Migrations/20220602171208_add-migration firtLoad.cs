@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Volunteering.Migrations
 {
-    public partial class firstLoad : Migration
+    public partial class addmigrationfirtLoad : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
