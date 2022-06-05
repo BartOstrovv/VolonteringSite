@@ -14,5 +14,7 @@ namespace BLL.Services
 
         public async Task UpdateAsync(User advertisement) => await _repo.Update(advertisement);
         public async Task<IReadOnlyCollection<User>> GetAllAsync() => await _repo.GetAllAsync();
+
+        public async Task<User> FindUserAsync(string id) => (await _repo.FindByConditionAsync(x => String.Equals(id, x.Id))).First();
     }
 }

@@ -1,0 +1,35 @@
+﻿@model Domain.Models.User
+<link rel="stylesheet" href="~/css/cabinet.css" asp-append-version="true" />
+<div style="justify-content:center">
+<div class="card-container">
+	<img class="round" src="@Model?.PersonData?.Photo?.PhotoPath" alt="user" />
+	<h3>@Model?.PersonData?.Name @Model?.PersonData?.Surname</h3>
+	<h6>@Model?.PersonData?.Address?.Country</h6>
+	<h7>@Model?.PersonData?.Address?.City</h7>
+	<div class="buttons">
+		<button class="primary">
+			Edit Info
+		</button>
+		<br />
+		<button class="primary ghost">
+			New Photo
+		</button>
+		<br />
+		<button class="primary ghost">
+			Replenish money
+		</button>
+	<br />
+	</div>
+	<div class="skills">
+		<h6>Info:</h6>
+		<ul>
+			<li>@Model?.PersonData?.Age years</li>
+			<li>Mobile: @Model?.PersonData?.Mobile</li>
+			<li>Money: @Model?.PersonData?.Money</li>
+			<li>@Html.ActionLink("My Donations", "DonationsList", new { id = Model?.Id })</li>
+			<li>@Html.ActionLink("My Ads", "AdsList", new { id = Model?.Id })</li>
+			<li>@Html.ActionLink("My Comments", "CommensList", new { id = Model?.Id })</li>
+		</ul>
+	</div>
+</div>
+</div>
