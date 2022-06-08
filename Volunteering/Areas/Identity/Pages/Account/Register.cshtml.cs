@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Volunteering.Areas.Identity.Pages.Account
 {
@@ -30,6 +31,7 @@ namespace Volunteering.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<User> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly IWebHostEnvironment _environment;
         private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
@@ -38,7 +40,8 @@ namespace Volunteering.Areas.Identity.Pages.Account
             SignInManager<User> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
-            RoleManager<IdentityRole> roleManager
+            RoleManager<IdentityRole> roleManager,
+            IWebHostEnvironment environment
            )
         {
             _userManager = userManager;
@@ -48,6 +51,7 @@ namespace Volunteering.Areas.Identity.Pages.Account
             _logger = logger;
             _emailSender = emailSender;
             _roleManager = roleManager;
+            _environment = environment;
         }
 
         /// <summary>
@@ -114,6 +118,10 @@ namespace Volunteering.Areas.Identity.Pages.Account
             [Display(Name = "Surname:")]
             public string Surname { get; set; }
 
+            [DataType(DataType.ImageUrl)]
+            [Display(Name = "Photo:")]
+            public IFormFile PhotoPath { get; set; }
+
             [Display(Name = "Age:")]
             public int Age { get; set; }
 
@@ -146,6 +154,12 @@ namespace Volunteering.Areas.Identity.Pages.Account
                 var user = CreateUser();
                 //await _roleManager.CreateAsync(new IdentityRole("Admin"));
                 //await _userManager.AddToRoleAsync(user, "Admin");
+
+                var rootPath = _environment.WebRootPath;
+                rootPath = Path.Combine(rootPath, "Images");
+                var savePath = Path.Combine(rootPath, Request.Form.Files[0].FileName);
+                Request.Form.Files[0].CopyTo(System.IO.File.Create(savePath));
+                var path = Path.Combine("~/Images", Request.Form.Files[0].FileName);
                 user.PersonData = new PersonData()
                 {
                     Name = Input.Name,
@@ -158,6 +172,10 @@ namespace Volunteering.Areas.Identity.Pages.Account
                         City = Input.City,
                         Street = Input.Street,
                         Build = Input.Build,
+                    },
+                    Photo = new Photo()
+                    {
+                        PhotoPath = path
                     }
                 };
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);

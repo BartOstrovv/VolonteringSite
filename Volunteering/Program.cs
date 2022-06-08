@@ -5,8 +5,12 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Volunteering.Services;
 using Serilog;
+using Azure.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var keyVaultEndpoint = new Uri("https://volunteeringvault.vault.azure.net/");
+builder.Configuration.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());
 
 //serilog
 builder.Host.UseSerilog((hostingContext, configuration) =>
@@ -15,7 +19,7 @@ builder.Host.UseSerilog((hostingContext, configuration) =>
 });
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString = builder.Configuration.GetValue(typeof(string), "DefaultConnection").ToString();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 var identityBuilder = builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true).AddRoles<IdentityRole>();
