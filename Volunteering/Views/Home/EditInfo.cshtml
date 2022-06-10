@@ -1,0 +1,66 @@
+﻿@model Volunteering.ViewModels.PersonDataViewModel;
+
+@{
+    ViewData["Title"] = "EditInfo";
+}
+
+<h1>EditInfo</h1>
+
+<h4>PersonData</h4>
+<hr />
+
+<form enctype="multipart/form-data" action="EditInfo" method="post" data-ajax="false" runat="server">
+            <div class="form-floating">
+                @Html.LabelFor(model=>model.Name)
+                <br/>
+                @Html.EditorFor(x=>x.Name)
+                <span></span>
+            </div>
+            <div class="form-floating">
+                @Html.LabelFor(x=>x.Surname)
+                <br/>
+                @Html.EditorFor(x=>x.Surname)
+                <span></span>
+            </div>
+            <div class="form-floating">
+                 @Html.LabelFor(x=>x.Age)
+                 <br/>
+                @Html.EditorFor(x=>x.Age)
+            </div>
+            <div class="form-floating">
+                @Html.LabelFor(x=>x.Mobile)
+                <br/>
+                @Html.EditorFor(x=>x.Mobile)
+            </div>
+            <div class="form-floating">
+                 @Html.LabelFor(x=>x.Photo)
+                 <br/>
+                @Html.EditorFor(x=>x.Photo)
+            </div>
+            <div class="form-floating">
+                 @Html.LabelFor(x=>x.Country)
+                 <br/>
+                @Html.EditorFor(x=>x.Country)
+            </div>
+            <div class="form-floating">
+                 @Html.LabelFor(x=>x.City)
+                 <br/>
+                @Html.EditorFor(x=>x.City)
+            </div>
+            <div class="form-floating">
+                 @Html.LabelFor(x=>x.Street)
+                 <br/>
+                @Html.EditorFor(x=>x.Street)
+            </div>
+            <div class="form-floating">
+                @Html.LabelFor(x=>x.Build)
+                <br/>
+                @Html.EditorFor(x=>x.Build)
+            </div>
+           
+            <button type="submit" class="w-100 btn btn-lg btn-primary">Update</button>
+        </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

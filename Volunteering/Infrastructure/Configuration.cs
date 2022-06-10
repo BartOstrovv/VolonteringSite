@@ -18,7 +18,6 @@ namespace Volunteering.Infrastructure
             services.AddTransient<AdvertisementService>();
             services.AddTransient<CommentService>();
             services.AddTransient<DonationService>();
-            services.AddTransient<PersonDataService>();
             services.AddTransient<UserService>();
         }
     }

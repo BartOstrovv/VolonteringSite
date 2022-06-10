@@ -2,13 +2,13 @@
 <link rel="stylesheet" href="~/css/cabinet.css" asp-append-version="true" />
 <div style="justify-content:center">
 <div class="card-container">
-	<img class="round" src="@Model?.PersonData?.Photo?.PhotoPath" alt="user" />
+	<img class="round"  src="@Model?.PersonData?.Photo?.PhotoPath" alt="user" style="max-width:100px;" />
 	<h3>@Model?.PersonData?.Name @Model?.PersonData?.Surname</h3>
 	<h6>@Model?.PersonData?.Address?.Country</h6>
 	<h7>@Model?.PersonData?.Address?.City</h7>
 	<div class="buttons">
 		<button class="primary">
-			Edit Info
+			@Html.ActionLink("Edit Info", "EditInfo")
 		</button>
 		<br />
 		<button class="primary ghost">

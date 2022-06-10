@@ -159,7 +159,7 @@ namespace Volunteering.Areas.Identity.Pages.Account
                 rootPath = Path.Combine(rootPath, "Images");
                 var savePath = Path.Combine(rootPath, Request.Form.Files[0].FileName);
                 Request.Form.Files[0].CopyTo(System.IO.File.Create(savePath));
-                var path = Path.Combine("~/Images", Request.Form.Files[0].FileName);
+                var path = Path.Combine("/Images", Request.Form.Files[0].FileName);
                 user.PersonData = new PersonData()
                 {
                     Name = Input.Name,

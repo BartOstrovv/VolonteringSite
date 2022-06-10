@@ -19,7 +19,9 @@ namespace DLL.Repository
 
         public async override Task<IReadOnlyCollection<User>> FindByConditionAsync(Expression<Func<User, bool>> predicat)
         {
-            return await Enntities.Include(u => u.PersonData).Include(u => u.Advertisements).Include(u=>u.Comments).Include(u=>u.Donations).Where(predicat).ToListAsync().ConfigureAwait(false);
+            return await Enntities.Include(u => u.PersonData).ThenInclude(p => p.Address).
+                Include(u=>u.PersonData).ThenInclude(p=>p.Photo).
+                Include(u => u.Advertisements).Include(u => u.Comments).Include(u => u.Donations).Where(predicat).ToListAsync().ConfigureAwait(false);
         }
 
         public async override Task<IReadOnlyCollection<User>> GetAllAsync()

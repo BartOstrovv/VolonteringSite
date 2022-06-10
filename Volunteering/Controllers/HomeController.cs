@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Volunteering.Models;
+using Volunteering.ViewModels;
 
 namespace Volunteering.Controllers
 {
@@ -13,12 +14,14 @@ namespace Volunteering.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly UserManager<User> _userManager;
         private readonly UserService _userService;
+        private readonly IWebHostEnvironment _environment;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<User> userManager, UserService userService)
+        public HomeController(ILogger<HomeController> logger, UserManager<User> userManager, UserService userService, IWebHostEnvironment webHostEnvironment)
         {
             _logger = logger;
             _userManager = userManager;
             _userService = userService;
+            _environment = webHostEnvironment;
         }
 
         public IActionResult Index()
@@ -33,6 +36,51 @@ namespace Volunteering.Controllers
             if (String.IsNullOrEmpty(userID))
                 return RedirectToAction("Error");
             return View(await _userService.FindUserAsync(userID));
+        }
+
+        [Authorize/*(Roles ="Admin, Owner")*/]
+        
+        public async Task<IActionResult> EditInfo(PersonDataViewModel info)
+        {
+            var id = _userManager.GetUserAsync(HttpContext.User).Result.Id;
+            var currUser = await _userService.FindUserAsync(id);
+
+            if (info.IsEmpty())
+            {
+                info.Init(currUser?.PersonData);
+                return View(info);
+            }
+            
+            var rootPath = _environment.WebRootPath;
+            rootPath = Path.Combine(rootPath, "Images");
+            var savePath = Path.Combine(rootPath, info.Photo.FileName);
+            Request.Form.Files[0].CopyTo(System.IO.File.Create(savePath));
+            var path = Path.Combine("Images", info.Photo.FileName);
+
+            if (currUser != null)
+            {
+                var newPersonInfo = new PersonData()
+                {
+                    Name = info.Name,
+                    Surname = info.Surname,
+                    Mobile = info.Mobile,
+                    Age = info.Age,
+                    Photo = new Photo()
+                    {
+                        PhotoPath = path
+                    },
+                    Address = new Address()
+                    {
+                        Country = info.Country,
+                        City = info.City,
+                        Street = info.City,
+                        Build = info.Build
+                    }
+                };
+                currUser.PersonData = newPersonInfo;
+                await _userService.UpdateAsync(currUser);
+            }
+            return RedirectToAction("Cabinet");
         }
 
         public async Task<IActionResult> DonationsList(string id)
