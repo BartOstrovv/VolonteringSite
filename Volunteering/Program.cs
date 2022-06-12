@@ -9,8 +9,8 @@ using Azure.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var keyVaultEndpoint = new Uri("https://volunteeringvault.vault.azure.net/");
-builder.Configuration.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());
+//var keyVaultEndpoint = new Uri("https://volunteeringvault.vault.azure.net/");
+//builder.Configuration.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());
 
 //serilog
 builder.Host.UseSerilog((hostingContext, configuration) =>
@@ -19,7 +19,7 @@ builder.Host.UseSerilog((hostingContext, configuration) =>
 });
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetValue(typeof(string), "DefaultConnection").ToString();
+var connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Volunteering;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";//builder.Configuration.GetValue(typeof(string), "DefaultConnection").ToString();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 var identityBuilder = builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true).AddRoles<IdentityRole>();

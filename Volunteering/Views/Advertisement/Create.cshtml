@@ -1,4 +1,4 @@
-﻿@model Domain.Models.Advertisement
+﻿@model Volunteering.ViewModels.AdvertisementViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -10,36 +10,56 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CreatedDate" class="control-label"></label>
-                <input asp-for="CreatedDate" class="form-control" />
-                <span asp-validation-for="CreatedDate" class="text-danger"></span>
+        <form enctype="multipart/form-data" action="Create" method="post" data-ajax="false" runat="server">
+            <div class="form-floating">
+                @Html.LabelFor(model=>model.CreatedDate)
+                <br/>
+                @Html.EditorFor(x=>x.CreatedDate)
+                <span></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+            <div class="form-floating">
+                @Html.LabelFor(x=>x.Title)
+                <br/>
+                @Html.EditorFor(x=>x.Title)
+                <span></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Body" class="control-label"></label>
-                <input asp-for="Body" class="form-control" />
-                <span asp-validation-for="Body" class="text-danger"></span>
+            <div class="form-floating">
+                 @Html.LabelFor(x=>x.Body)
+                 <br/>
+                @Html.EditorFor(x=>x.Body)
             </div>
-            <div class="form-group">
-                <label asp-for="NeedMoney" class="control-label"></label>
-                <input asp-for="NeedMoney" class="form-control" />
-                <span asp-validation-for="NeedMoney" class="text-danger"></span>
+            <div class="form-floating">
+                 @Html.LabelFor(x=>x.NeedMoney)
+                 <br/>
+                @Html.EditorFor(x=>x.NeedMoney)
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Close" /> @Html.DisplayNameFor(model => model.Close)
-                </label>
+            <div class="form-floating">
+                @Html.LabelFor(x=>x.DeliveryCountry)
+                <br/>
+                @Html.EditorFor(x=>x.DeliveryCountry)
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary"/>
+            <div class="form-floating">
+                 @Html.LabelFor(x=>x.DeliveryCity)
+                 <br/>
+                @Html.EditorFor(x=>x.DeliveryCity)
             </div>
+            <div class="form-floating">
+                 @Html.LabelFor(x=>x.DeliveryStreet)
+                 <br/>
+                @Html.EditorFor(x=>x.DeliveryStreet)
+            </div>
+            <div class="form-floating">
+                 @Html.LabelFor(x=>x.DeliveryBuild)
+                 <br/>
+                @Html.EditorFor(x=>x.DeliveryBuild)
+            </div>
+            <div class="form-floating">
+                @Html.LabelFor(x=>x.Photos)
+                 <br/>
+                @Html.EditorFor(x=>x.Photos)
+            </div>
+           
+            <button type="submit" class="w-100 btn btn-lg btn-primary">Update</button>
         </form>
     </div>
 </div>

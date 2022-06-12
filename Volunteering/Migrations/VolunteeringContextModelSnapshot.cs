@@ -85,6 +85,7 @@ namespace Volunteering.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -449,7 +450,9 @@ namespace Volunteering.Migrations
 
                     b.HasOne("Domain.Models.User", null)
                         .WithMany("Advertisements")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("DeliveryAddress");
                 });

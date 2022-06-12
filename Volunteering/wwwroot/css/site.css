@@ -16,3 +16,24 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+body {
+    /*background: url('../Images/img1.jpg') no-repeat center center;*/
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #7f7fd5;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #463f3a;
+    border-radius: 6px;
+    outline: none;
+    font-family: Calibri
+}

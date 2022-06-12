@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Volunteering.Migrations
 {
     [DbContext(typeof(VolunteeringContext))]
-    [Migration("20220602171208_add-migration firtLoad")]
-    partial class addmigrationfirtLoad
+    [Migration("20220612170656_firstLoad")]
+    partial class firstLoad
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -87,6 +87,7 @@ namespace Volunteering.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -451,7 +452,9 @@ namespace Volunteering.Migrations
 
                     b.HasOne("Domain.Models.User", null)
                         .WithMany("Advertisements")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("DeliveryAddress");
                 });

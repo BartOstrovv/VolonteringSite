@@ -17,6 +17,7 @@ namespace Domain.Models
         public string Body { get; set; }
         public double CurrentMoney { get; set; }
         public double NeedMoney { get; set; }
+        public string UserId { get; set; }
         public List<Donation> Donations { get; set; }
         public Address? DeliveryAddress { get; set; }
         public List<Comment>? Comments { get; set; }

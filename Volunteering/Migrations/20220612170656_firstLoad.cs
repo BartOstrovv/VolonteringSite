@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Volunteering.Migrations
 {
-    public partial class addmigrationfirtLoad : Migration
+    public partial class firstLoad : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -71,10 +71,10 @@ namespace Volunteering.Migrations
                     Body = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CurrentMoney = table.Column<double>(type: "float", nullable: false),
                     NeedMoney = table.Column<double>(type: "float", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     DeliveryAddressId = table.Column<int>(type: "int", nullable: true),
                     Aproved = table.Column<bool>(type: "bit", nullable: false),
-                    Close = table.Column<bool>(type: "bit", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    Close = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -400,7 +400,8 @@ namespace Volunteering.Migrations
                 table: "Advertisements",
                 column: "UserId",
                 principalTable: "AspNetUsers",
-                principalColumn: "Id");
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

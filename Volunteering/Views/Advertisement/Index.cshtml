@@ -1,71 +1,57 @@
-﻿@model IEnumerable<Domain.Models.Advertisement>
+﻿@model IEnumerable<Volunteering.ViewModels.AdWithAuthorViewModel>
 
 @{
     ViewData["Title"] = "Index";
 }
-
+<link rel="stylesheet" href="~/css/gallery.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/advertisementCard.css" asp-append-version="true" />
 <h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Body)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CurrentMoney)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NeedMoney)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Close)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Body)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CurrentMoney)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NeedMoney)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Close)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
-                @Html.ActionLink("Details", "Details", new {  id=item.Id }) |
-                @Html.ActionLink("Donat", "Donat", new {  id=item.Id  })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="container">
+    @foreach (var item in Model) {
+  <div class="card">
+    <div class="card__header">
+      <div class="container">
+                        
+	            @for (int i = 0; i < item.Images.Count; i++)
+	            {
+                    <div class="mySlides">
+		            <div class="numbertext">@(i+1) / @item.Images.Count</div>
+      		        <img src="@item.Images[i].PhotoPath" style="width:100%">
+  		            </div>
+	            }
+  <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)" style="margin-right: 305px">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <div class="row">
+   	                    @for (int i = 0; i < item.Images.Count; i++)
+	                    {
+		                    <div class="column">
+      		                <img class="demo cursor" src="@item.Images[i].PhotoPath" style="width:100%" onclick="currentSlide(@i+1)">
+    		                </div>
+	                    }
+                    </div>
+                </div>
+    </div>
+    <div class="card__body">
+      <span class="tag tag-red">Active</span>
+      <h4>@item.Title</h4>
+      <p>@item.Body</p>
+    </div>
+    <div class="card__footer">
+      <div class="user">
+        <img src="@item.UserPhotoPath" class="user__image" style="max-width:100px;">
+        <div class="user__info">
+          <h5>@string.Concat(item.UserName + " " + item.UserSurname)</h5>
+          <small>@item.CreatedDate</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>

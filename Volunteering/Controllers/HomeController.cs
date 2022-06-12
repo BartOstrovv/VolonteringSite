@@ -55,7 +55,7 @@ namespace Volunteering.Controllers
             rootPath = Path.Combine(rootPath, "Images");
             var savePath = Path.Combine(rootPath, info.Photo.FileName);
             Request.Form.Files[0].CopyTo(System.IO.File.Create(savePath));
-            var path = Path.Combine("Images", info.Photo.FileName);
+            var path = Path.Combine("/Images", info.Photo.FileName);
 
             if (currUser != null)
             {

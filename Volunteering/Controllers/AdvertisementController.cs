@@ -3,6 +3,7 @@ using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
+using Volunteering.ViewModels;
 
 namespace Volunteering.Controllers
 {
@@ -12,18 +13,43 @@ namespace Volunteering.Controllers
         private readonly CommentService _commentSevice;
         private readonly DonationService _donatService;
         private readonly UserManager<User> _userManager;
+        private readonly UserService _userService;
         private static int EditableAdverisementId = -1;
-        public AdvertisementController(AdvertisementService serv, CommentService commentService, UserManager<User> userManager, DonationService donationService)
+        private readonly IWebHostEnvironment _environment;
+        public AdvertisementController(AdvertisementService serv, CommentService commentService, UserManager<User> userManager, DonationService donationService, IWebHostEnvironment webHostEnvironment, UserService userService)
         {
             _adService = serv;
             _commentSevice = commentService;
             _userManager = userManager; 
             _donatService = donationService;
+            _environment = webHostEnvironment;
+            _userService = userService;
         }
 
         public async Task<IActionResult> Index()
         {
-            return View((await _adService.GetAllAsync()).OrderBy(x => x.CreatedDate));
+            var adsWithUser = new List<AdWithAuthorViewModel>();
+            var ads = await _adService.GetAllAsync();
+            foreach(var ad in ads)
+            {
+                var us = await _userService.FindUserAsync(ad.UserId);
+                if (us == null)
+                    continue;
+                adsWithUser.Add(new AdWithAuthorViewModel()
+                {
+                    Title = ad.Title,
+                    Body = ad.Body,
+                    UserId = us.Id,
+                    CreatedDate = ad.CreatedDate,
+                    UserPhotoPath = us?.PersonData?.Photo?.PhotoPath,
+                    Images = ad?.Images,
+                    CurrentMoney = ad?.CurrentMoney,
+                    NeedMoney = ad?.NeedMoney,
+                    UserName = us?.PersonData?.Name,
+                    UserSurname = us?.PersonData?.Surname,
+                });
+            }
+            return View(adsWithUser);
         }
 
         public async Task<IActionResult> Details(int id)
@@ -33,12 +59,38 @@ namespace Volunteering.Controllers
 
        
         [Authorize]
-        public async Task<IActionResult> Create(Advertisement ad)
+        public async Task<IActionResult> Create(AdvertisementViewModel ad)
         {
-            if (ad.Title != null)
+            if (!ad.IsEmpty())
             {
-                
-                await _adService.AddAdvertisementAsync(ad);
+                var rootPath = _environment.WebRootPath;
+                rootPath = Path.Combine(rootPath, "Images");
+                var listPhoto = new List<Photo>();
+                foreach (var file in Request.Form.Files)
+                {
+                    var savePath = Path.Combine(rootPath, file.FileName);
+                    file.CopyTo(System.IO.File.Create(savePath));
+                    var path = Path.Combine("/Images", file.FileName);
+                    listPhoto.Add(new Photo() { PhotoPath = path });
+                }
+
+                var adverisementModel = new Advertisement()
+                {
+                    Title = ad.Title,
+                    Body = ad.Body,
+                    NeedMoney = ad.NeedMoney,
+                    CreatedDate = ad.CreatedDate,
+                    DeliveryAddress = new Address()
+                    {
+                        Country = ad.DeliveryCountry,
+                        City = ad.DeliveryCity,
+                        Street = ad.DeliveryStreet,
+                        Build = ad.DeliveryBuild
+                    },
+                    Images = listPhoto,
+                    UserId = _userManager.GetUserAsync(HttpContext.User).Result.Id
+            };
+                await _adService.AddAdvertisementAsync(adverisementModel);
     
                 return RedirectToAction("Index");
             }
@@ -46,7 +98,7 @@ namespace Volunteering.Controllers
             return View(ad);
         }
 
-        [Authorize/*(Roles ="Admin, Owner")*/]
+        [Authorize(Roles ="Admin")]
         [HttpPost]
         public async Task<IActionResult> Edit(Advertisement ad)
         {
