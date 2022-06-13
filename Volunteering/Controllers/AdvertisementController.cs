@@ -37,6 +37,7 @@ namespace Volunteering.Controllers
                     continue;
                 adsWithUser.Add(new AdWithAuthorViewModel()
                 {
+                    AdId = ad.Id,
                     Title = ad.Title,
                     Body = ad.Body,
                     UserId = us.Id,

@@ -4,6 +4,7 @@ namespace Volunteering.ViewModels
 {
     public class AdWithAuthorViewModel
     {
+        public int AdId { get; set; }
         public List<Photo>? Images { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Title { get; set; }
