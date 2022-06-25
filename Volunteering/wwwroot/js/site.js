@@ -3,25 +3,26 @@
 
 // Write your JavaScript code.
 
-
 var slideIndex = 1;
+var group = 0;
 showSlides(slideIndex);
-
 // Next/previous controls
-function plusSlides(n) {
+function plusSlides(n, indx) {
+    group = indx;
     showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
-function currentSlide(n) {
+function currentSlide(n, indx) {
+    group = indx;
     showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
     var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
-    var captionText = document.getElementById("caption");
+    var slides = document.getElementsByClassName("mySlides " + group.toString());
+    var dots = document.getElementsByClassName("demo " + group.toString());
+
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {

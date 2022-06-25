@@ -1,16 +1,14 @@
 using BLL.Infrastructure;
 using Domain.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.EntityFrameworkCore;
-using Volunteering.Services;
 using Serilog;
 using Azure.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//var keyVaultEndpoint = new Uri("https://volunteeringvault.vault.azure.net/");
+//var keyVaultEndpoint = new Uri("https://volunteeringvaultt.vault.azure.net/");
 //builder.Configuration.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());
+
 
 //serilog
 builder.Host.UseSerilog((hostingContext, configuration) =>
@@ -19,7 +17,7 @@ builder.Host.UseSerilog((hostingContext, configuration) =>
 });
 
 // Add services to the container.
-var connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Volunteering;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";//builder.Configuration.GetValue(typeof(string), "DefaultConnection").ToString();
+var connectionString = @"Server=tcp:volunteeringserv.database.windows.net,1433;Initial Catalog=VolunteeringDb;Persist Security Info=False;User ID=administratorr;Password=Qwerty1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";//builder.Configuration.GetValue(typeof(string), "DefaultConnection").ToString();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 var identityBuilder = builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true).AddRoles<IdentityRole>();
@@ -32,6 +30,7 @@ BLL.Infrastructure.Configuration.ConfigurationService(builder.Services, connecti
 Volunteering.Infrastructure.Configuration.ConfigurationService(builder.Services);
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddApplicationInsightsTelemetry(builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]);
 
 var app = builder.Build();
 
