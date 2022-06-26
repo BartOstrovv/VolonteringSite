@@ -38,6 +38,12 @@ namespace Volunteering.Controllers
             return View(await _userService.FindUserAsync(userID));
         }
 
+        public async Task<IActionResult> UserInfo(string id)
+        {
+            var us = await _userService.FindUserAsync(id);
+            return View(us);
+        }
+
         [Authorize/*(Roles ="Admin, Owner")*/]
         
         public async Task<IActionResult> EditInfo(PersonDataViewModel info)

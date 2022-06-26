@@ -1,9 +1,11 @@
-﻿@model Domain.Models.Advertisement
+﻿@model Volunteering.ViewModels.AdWithAuthorViewModel
 
 @{
     ViewData["Title"] = "Detail";
 }
 <link rel="stylesheet" href="~/css/advertisementDetails.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/commentsBox.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/advertisementCard.css" asp-append-version="true" />
 
 @*<div>
     <h4>Advertisement</h4>
@@ -67,22 +69,17 @@
 
 	<div class="blog-card spring-fever">
   <div class="title-content">
-    <h3><a href="#">10 inspiring photos</a></h3>
-    <div class="intro"> <a href="#">Inspiration</a> </div>
+    <h3><a href="#">@Model.Title</a></h3>
+    <div class="intro"> <a href="#">@Model.UserName @Model.UserSurname</a> </div>
   </div>
   <div class="card-info">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim... 
-    <div class="col-6">
-      <textarea type="text" class="input" placeholder="Write a comment" v-model="newItem"></textarea>
-          <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Add Comment</button>
-        </div><!-- End col -->
+    @Model.Body 
+    
   </div>
   <div class="utility-info">
     <ul class="utility-list">
-      <li><span class="licon icon-like"></span><a href="#">2</a></li>
-      <li><span class="licon icon-com"></span><a href="#">12</a></li>
-      <li><span class="licon icon-dat"></span>03 jun 2017</li>
-      <li><span class="licon icon-tag"></span><a href="#">Photos</a>, <a href="#">Nice</a></li>
+      <li><span class="licon icon-com"></span><a href="#">@Model.Comments?.Count</a></li>
+      <li><span class="licon icon-dat"></span>@Model.CreatedDate</li>
     </ul>
   </div>
   <div class="gradient-overlay"></div>
@@ -90,5 +87,5 @@
   </div>
 </div><!-- /.blog-card -->
 
-   
-
+ <!-- comments -->
+ 

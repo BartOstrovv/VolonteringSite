@@ -1,0 +1,39 @@
+﻿@model KeyValuePair<Domain.Models.Advertisement, List<Volunteering.ViewModels.CommentsWithUserViewModel>>
+<link rel="stylesheet" href="~/css/advertisementDetails.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/commentsBox.css" asp-append-version="true" />
+<!-- Contenedor Principal -->
+	<div class="comments-container">
+		<h1>@Html.ActionLink("Back To List", "Index")</h1>
+
+		<ul id="comments-list" class="comments-list">
+			@if (Model.Key != null && Model.Value.Count != 0)
+			@foreach(var coment in Model.Value)
+		{
+			<li>
+				<div class="comment-main-level">
+					<!-- Avatar -->
+					<div class="comment-avatar"><img src="@coment.UserAvatar" alt=""></div>
+					<!-- Contenedor del Comentario -->
+					<div class="comment-box">
+						<div class="comment-head">
+							<h6 class="comment-name"><a href="http://creaticode.com/blog">@coment.UserName @coment.UserSurname</a></h6>
+							<span>hace 10 minutos</span>
+							<i class="fa fa-reply"></i>
+							<i class="fa fa-heart"></i>
+						</div>
+						<div class="comment-content">
+							@coment.Text
+						</div>
+					</div>
+				</div>
+			</li>
+		}
+		</ul>
+
+		<form method="get" action="AddComment">
+		<div class="col-6">
+      <textarea type="text" name="text" class="input" placeholder="Write a comment" v-model="newItem"></textarea>
+          <button class='primaryContained float-right' type="submit">Add Comment</button>
+        </div><!-- End col -->
+		</form>
+	</div>

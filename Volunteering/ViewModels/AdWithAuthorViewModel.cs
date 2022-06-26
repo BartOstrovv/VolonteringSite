@@ -15,5 +15,7 @@ namespace Volunteering.ViewModels
         public string? UserName { get; set; }
         public string? UserSurname { get; set; }
         public string? UserPhotoPath { get; set; }
+        public List<Donation> Donations { get; set; }
+        public List<Comment>? Comments { get; set; }
     }
 }

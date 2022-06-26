@@ -55,7 +55,24 @@ namespace Volunteering.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            return View(await _adService.FindAdvertisementAsync(id));
+            var ad = await _adService.FindAdvertisementAsync(id);
+            var us = await _userService.FindUserAsync(ad.UserId);
+            return View(new AdWithAuthorViewModel()
+            {
+                AdId = ad.Id,
+                Title = ad.Title,
+                Body = ad.Body,
+                UserId = us.Id,
+                CreatedDate = ad.CreatedDate,
+                UserPhotoPath = us?.PersonData?.Photo?.PhotoPath,
+                Images = ad?.Images,
+                CurrentMoney = ad?.CurrentMoney,
+                NeedMoney = ad?.NeedMoney,
+                UserName = us?.PersonData?.Name,
+                UserSurname = us?.PersonData?.Surname,
+                Comments = ad?.Comments,
+                Donations = ad?.Donations
+            });
         }
 
        
@@ -117,26 +134,60 @@ namespace Volunteering.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> AddComment(int adId, string text)
+        public async Task<IActionResult> Comment(int id, string text)
         {
-            if (!String.IsNullOrEmpty(text))
+            if (!string.IsNullOrEmpty(text))
             {
-                adId = EditableAdverisementId;
-                EditableAdverisementId = -1;
                 string userId = _userManager.GetUserAsync(HttpContext.User).Result.Id;
-                var op = _commentSevice.NewComment(text, adId, userId).Result;
-                if (op.IsSuccessful)
-                    return RedirectToAction("Details", new {id = adId});
+                await _commentSevice.NewComment(text, EditableAdverisementId, userId);
+                return RedirectToAction("Comment", new { id = EditableAdverisementId });
             }
-            else
+            EditableAdverisementId = EditableAdverisementId < 0 ? id : -1;
+            var ad = await _adService.FindAdvertisementAsync(id);
+            
+            var listCommentsWithUs = new List<CommentsWithUserViewModel>();
+            foreach(var coment in ad.Comments)
             {
-                EditableAdverisementId = adId;
+                var us = await _userService.FindUserAsync(coment.UserId);
+                listCommentsWithUs.Add(new CommentsWithUserViewModel()
+                {
+                    Text = coment.Text,
+                    UserName = us?.PersonData?.Name,
+                    UserSurname = us?.PersonData?.Surname,
+                    UserAvatar = us?.PersonData?.Photo?.PhotoPath
+                });
             }
-            return View();
+            return View(new KeyValuePair<Advertisement, List<CommentsWithUserViewModel>>(ad, listCommentsWithUs));
         }
 
-        public ActionResult Donat(int id)
+        /*[HttpPost]
+        public async Task<IActionResult> Comment(Comment comment)
         {
+            if (!String.IsNullOrEmpty(ad.Title) && !String.IsNullOrEmpty(ad.Body))
+            {
+                await _adService.UpdateAsync(ad);
+                return RedirectToAction("Details", new { id = ad.Id });
+            }
+            return View(await _adService.FindAdvertisementAsync(ad.Id));
+        }*/
+
+        public async Task<IActionResult> Donat(int id, string sum, string coment)
+        {
+            if ((EditableAdverisementId >= 0) && !string.IsNullOrEmpty(sum) && !string.IsNullOrEmpty(coment))
+            {
+                int.TryParse(sum, out int nCount);
+                var ad = _adService.FindAdvertisementAsync(EditableAdverisementId).Result;
+                if ((nCount >= 0) && !ad.Close)
+                {
+                    ad.CurrentMoney += nCount;
+                    ad.Close = ad.CurrentMoney >= ad.NeedMoney;
+                    await _adService.UpdateAsync(ad);
+
+                    await _donatService.NewDonat(EditableAdverisementId, _userManager.GetUserAsync(HttpContext.User).Result.Id, coment, DateTime.Now, nCount);
+                    EditableAdverisementId = -1;
+                    return RedirectToAction("Index");
+                }
+            }
             EditableAdverisementId = id;
             return View();
         }
@@ -146,7 +197,7 @@ namespace Volunteering.Controllers
             return View(await _donatService.GetFromAdAsync(id));
         }
 
-        [HttpPost]
+        /*[HttpPost]
         public async Task<IActionResult> Donat(Donation donat)
         {
             donat.AdvertisementId = EditableAdverisementId;
@@ -160,7 +211,7 @@ namespace Volunteering.Controllers
             await _donatService.NewDonat(EditableAdverisementId, _userManager.GetUserAsync(HttpContext.User).Result.Id, donat.Comment, donat.DateTime, donat.Sum);
             EditableAdverisementId = -1;
             return RedirectToAction("Details", new { id = donat.AdvertisementId });
-        }
+        }*/
         public async Task<ActionResult> FindAds(string text)
         {
             if (!String.IsNullOrEmpty(text))

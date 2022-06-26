@@ -3,40 +3,45 @@
 @{
     ViewData["Title"] = "Donat";
 }
+<link rel="stylesheet" href="~/css/cardTransact.css" asp-append-version="true" />
 
-<h1>Donat</h1>
-
-<h4>Donation</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Donat">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
-            <div class="form-group">
-                <label asp-for="Sum" class="control-label"></label>
-                <input asp-for="Sum" class="form-control" />
-                <span asp-validation-for="Sum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DateTime" class="control-label"></label>
-                <input asp-for="DateTime" class="form-control" />
-                <span asp-validation-for="DateTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Comment" class="control-label"></label>
-                <input asp-for="Comment" class="form-control" />
-                <span asp-validation-for="Comment" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container">
+  <div class="col1">
+    <div class="card">
+      <div class="front">
+        <div class="type">
+          <img class="bankid"/>
+        </div>
+        <span class="chip"></span>
+        <span class="card_number">&#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; </span>
+        <div class="date"><span class="date_value">MM / YYYY</span></div>
+        <span class="fullname">FULL NAME</span>
+      </div>
+      <div class="back">
+        <div class="magnetic"></div>
+        <div class="bar"></div>
+        <span class="seccode">&#x25CF;&#x25CF;&#x25CF;</span>
+        <span class="chip"></span><span class="disclaimer">This card is property of Random Bank of Random corporation. <br> If found please return to Random Bank of Random corporation - 21968 Paris, Verdi Street, 34 </span>
+      </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+  </div>
+  <form>
+  <div class="col2">
+      <label>Sum</label>
+      <input class="number" type="text" name="sum" ng-model="ncard" maxlength="19"/>
+      <label>Comment</label>
+      <input class="number" type="text" name="coment" ng-model="ncard" maxlength="19"/>
+    <label>Card Number</label>
+    <input class="number" type="text" ng-model="ncard" maxlength="19" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+    <label>Cardholder name</label>
+    <input class="inputname" type="text" placeholder=""/>
+    <label>Expiry date</label>
+    <input class="expire" type="text" placeholder="MM / YYYY"/>
+    <label>Security Number</label>
+    <input class="ccv" type="text" placeholder="CVC" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+    <input class="buy" type="submit" value="Donat" />
+  </div>
+  </form>
 </div>
 
 @section Scripts {
