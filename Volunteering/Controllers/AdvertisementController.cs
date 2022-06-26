@@ -170,7 +170,7 @@ namespace Volunteering.Controllers
             }
             return View(await _adService.FindAdvertisementAsync(ad.Id));
         }*/
-
+        [Authorize]
         public async Task<IActionResult> Donat(int id, string sum, string coment)
         {
             if ((EditableAdverisementId >= 0) && !string.IsNullOrEmpty(sum) && !string.IsNullOrEmpty(coment))
