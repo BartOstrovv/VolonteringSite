@@ -52,29 +52,6 @@ namespace Volunteering.Controllers
             }
             return View(adsWithUser);
         }
-
-        public async Task<IActionResult> Details(int id)
-        {
-            var ad = await _adService.FindAdvertisementAsync(id);
-            var us = await _userService.FindUserAsync(ad.UserId);
-            return View(new AdWithAuthorViewModel()
-            {
-                AdId = ad.Id,
-                Title = ad.Title,
-                Body = ad.Body,
-                UserId = us.Id,
-                CreatedDate = ad.CreatedDate,
-                UserPhotoPath = us?.PersonData?.Photo?.PhotoPath,
-                Images = ad?.Images,
-                CurrentMoney = ad?.CurrentMoney,
-                NeedMoney = ad?.NeedMoney,
-                UserName = us?.PersonData?.Name,
-                UserSurname = us?.PersonData?.Surname,
-                Comments = ad?.Comments,
-                Donations = ad?.Donations
-            });
-        }
-
        
         [Authorize]
         public async Task<IActionResult> Create(AdvertisementViewModel ad)
@@ -160,16 +137,6 @@ namespace Volunteering.Controllers
             return View(new KeyValuePair<Advertisement, List<CommentsWithUserViewModel>>(ad, listCommentsWithUs));
         }
 
-        /*[HttpPost]
-        public async Task<IActionResult> Comment(Comment comment)
-        {
-            if (!String.IsNullOrEmpty(ad.Title) && !String.IsNullOrEmpty(ad.Body))
-            {
-                await _adService.UpdateAsync(ad);
-                return RedirectToAction("Details", new { id = ad.Id });
-            }
-            return View(await _adService.FindAdvertisementAsync(ad.Id));
-        }*/
         [Authorize]
         public async Task<IActionResult> Donat(int id, string sum, string coment)
         {
@@ -197,21 +164,6 @@ namespace Volunteering.Controllers
             return View(await _donatService.GetFromAdAsync(id));
         }
 
-        /*[HttpPost]
-        public async Task<IActionResult> Donat(Donation donat)
-        {
-            donat.AdvertisementId = EditableAdverisementId;
-            var ad = await _adService.FindAdvertisementAsync(EditableAdverisementId);
-            if (!ad.Close)
-            {
-                ad.CurrentMoney += donat.Sum;
-                ad.Close = ad.CurrentMoney >= ad.NeedMoney;
-                await _adService.UpdateAsync(ad);
-            }
-            await _donatService.NewDonat(EditableAdverisementId, _userManager.GetUserAsync(HttpContext.User).Result.Id, donat.Comment, donat.DateTime, donat.Sum);
-            EditableAdverisementId = -1;
-            return RedirectToAction("Details", new { id = donat.AdvertisementId });
-        }*/
         public async Task<ActionResult> FindAds(string text)
         {
             if (!String.IsNullOrEmpty(text))
